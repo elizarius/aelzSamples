@@ -1,0 +1,46 @@
+C++ development plan
+--------------------
+
+- Find useful MFP C examples
+-----------------------------
+
+- Find good discussion group, f.e in Linkedin, stackoverflow
+
+- Run / analyse existing client server applications
+- Implement different type client / server applications as framework, f.i uds, piped, forked
+
+- Pipe, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
+- Pipe,  implement  with client / server applications
+- Semaphor simple example on C++
+
+- Thread, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
+- Threading models, read about exisitng , implement something different than posix threads
+- Fork, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
+- Read latest ISO C++ standard , run useful examples", such as threads.mutex impl
+
+- Singlethon with threads , see and re-implement Baha example
+- See other useful examples in SS_Commutil/test
+- Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
+- Look ""protclient"" Antti's example , as alternative ""getopt_long"
+- Copy SS_EdgeRoutingMgr / SS_EdgeRouitngCommon as example of protomsgs lib implementation,
+  find place  where it is implemented on socket as protocol ( 4 bytes , length of message added )
+- Coding style guide , read carefully , check questionable proposals
+- BoostCpp  , read , execute  useful examples
+- Event management framework , read and run examples : sockets etc .
+- Abstact Factory , read and implement useful example
+- Template method , implement to myCpp samples
+- Read available books , execute some examples from them ": ScottMayers, Q&A old course , stl maps etc"
+- Find book : refactoring for old systems  , read and execute examples"
+- Develop StatePattern , because useful for state machine
+- Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
+- Apply for open sourced github C++ project
+
+DONE
+----
+- Sort C/C++ into separate folders
+- Run unclear C examples from 00_basicC
+- Find other C examples, analyse, copy useful to 00_basicC: IP
+- Pass through myCpp samples. Implement interested not working, f.i change makefiles
+- Go throw old Brain bench tests , implement quiestionable samples
+- Install IDE
+

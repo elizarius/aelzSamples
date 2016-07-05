@@ -1,6 +1,6 @@
 ## Unix domain server client/server examples.
 
-- unpack /make 
-- rtclient server
-- rtclient iface --if-name zzz 
+- unpack /make
+- rtclient udsServer
+- rtclient iface --if-name zzz
 

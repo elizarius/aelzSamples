@@ -1,18 +1,15 @@
 ################################################################
 #
 #       Makefile for rtclient
-# 
+#
 ################################################################
 
 CXX      = g++
 CXXFLAGS = -g
-INCLUDES = -I. \
-	   -I/home/user/lsiZebos/ZebOS/hal \
-	   -I/home/user/lsiZebos/ZebOS/lib
+INCLUDES = -I.
 
-LIBS     =   
+LIBS     =
 
-#LIBS    = L/usr/X11R6/lib -lX11 # Contains libraries we need to link in.    
 
 #################### Objects ###################################
 

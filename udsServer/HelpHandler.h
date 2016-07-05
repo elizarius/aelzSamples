@@ -1,8 +1,6 @@
 #ifndef _HELP_HANDLER_
 #define _HELP_HANDLER_
 
-#include <iostream>
-#include <string>
 #include "cli.h"
 
 
@@ -15,7 +13,8 @@ class HelpHandler : public Cli
         virtual int processCli(int c , char * argv[]);
         void usage () ;
     private:
-        void examples();
+        std::string progName_;
+
         void design();
 
 };

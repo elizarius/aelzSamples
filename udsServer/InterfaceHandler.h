@@ -2,23 +2,18 @@
 #define _IF_HANDLER_
 
 #include "cli.h"
-//#include "msg.h"
-
 
 /**
- *  Interface CLI handler 
+ *  Interface CLI handler
  */
 class InterfaceHandler : public Cli
 {
     public:
-        InterfaceHandler(): hIface_("./protoclient iface --if-name  <name>  [--mtu <int>]")
+        InterfaceHandler(): hIface_("./rtcclient iface --if-name  <name>  [--mtu <int>]")
          {};
         virtual int processCli(int argc, char * argv[]);
 
     private:
-
-        int fillInterfaceMsg();
-
         /** interface help message   */
         std::string hIface_;
         std::string ifaceName_ ;
@@ -26,8 +21,10 @@ class InterfaceHandler : public Cli
         unsigned int mtuSize_;
         unsigned int ifaceIndex_ ;
 
-     //   struct hal_msg_if ifMsg_;
-        
+        /**
+        *  Function sends message to HALI server via uds
+        */
+        int sendHaliMsg() ;
 };
 
 #endif

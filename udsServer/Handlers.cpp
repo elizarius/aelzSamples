@@ -5,11 +5,11 @@
 
 using namespace std;
 
-void Handlers::init() 
+void Handlers::init()
 {
-  mHandlers.insert(argHandlersType::value_type ("help",   new HelpHandler));
-  mHandlers.insert(argHandlersType::value_type ("server", new UdsServer));
-  mHandlers.insert(argHandlersType::value_type ("iface",  new InterfaceHandler));
+mHandlers.insert(argHandlersType::value_type ("help",   new HelpHandler));
+mHandlers.insert(argHandlersType::value_type ("udsServer", new UdsServer));
+mHandlers.insert(argHandlersType::value_type ("iface",  new InterfaceHandler));
 }
 
 /*
@@ -26,7 +26,7 @@ Cli * Handlers::getHandler(const char * arg)
   {
     return theIterator->second;
   }
-  else 
+  else
    return 0 ;
 }
 

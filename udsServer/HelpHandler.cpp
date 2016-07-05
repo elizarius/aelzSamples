@@ -1,84 +1,58 @@
+#include <iostream>
+#include <string>
+
 #include "Handlers.h"
 #include "HelpHandler.h"
 
 using namespace std;
-
-int helpMessage(const char  * msg)
-{
-   std::cout<<std::endl<<msg<<std::endl;
-   return 0 ;  
-}
-
 
 HelpHandler::HelpHandler()
 {}
 
 int HelpHandler::processCli(int argc , char * argv[])
 {
-   // Only help without parameters 
-   if( argc == 2 ) 
-   {
-    usage();
+    progName_ = argv[0];
+
+   // Only help without parameters
+   if( argc == 2 ) {
+        usage();
+        return 0 ;
+   }
+
+    if (argc > 2) {
+        string handler = (argv[2]) ;
+        if(handler =="design") design();
+    }
+
     return 0 ;
-   }
-
-   // Check arguments 
-   for(int i = 2; i < argc; i++)
-   {
-
-     string temp_arg(argv[i]) ;
-     
-     if(temp_arg =="examples")    examples();
-     if(temp_arg =="design")      design();
-   }
-
-  return 0 ;
-
 }
 
 
 void HelpHandler::usage()
 {
-   std::cout <<endl<< "Usage: " << endl;
-
-   std::cout <<"./rtclient <iface|server>  arguments"<< endl;
-
-   std::cout <<" more info :./rtclient add|set|delete|get|server> -h"<< endl<<endl;
-
-   std::cout <<" Examples : ./rtclient help examples "<< endl<<endl;
-   
-   std::cout <<" Design   : ./rtclient help design "<< endl<<endl;
-
+    std::cout <<progName_<<" help <handler -h|design> "<< endl<<endl;
+    std::cout <<"Examples:"<< endl<<endl;
+    std::cout <<"  "<<progName_<<" udsServer"<< endl<<endl;
+    std::cout <<"  "<<progName_<<" iface  -h"<< endl<<endl;
+    std::cout <<"  "<<progName_<<" iface  --if-name zzz"<< endl<<endl;
 }
 
 
 void HelpHandler::design()
 {
- /*
-  cout <<endl<< "Design: " << endl;
-  cout << "-------" << endl<<endl;
-  cout << "To implemenent new protoclient commands next steps have to be done : " <<endl;
-  cout << "\t"<<" 1. Design your protoclient command " <<endl;
-  cout << "\t"<<" 2. Write cli handler, processing protoclient commands." <<endl;
-  cout << "\t"<<"    This handler have to be inherited from abstract Cli class. " <<endl;
-  cout << "\t"<<"    Handler must implement at least fillRequest() function " <<endl;
-  cout << "\t"<<" 3. Add your handler to mapHandlers in Handlers::init()/Handlers.cpp " <<endl;
-  cout << "\t"<<" 4. Call your handler from corresponding 1 level handler:   " <<endl;
-  cout << "\t"<<"    fillRequest() in ComponentHandler/ConfigHander/GetHandler " <<endl;
-  cout << "\t"<<" 5. Add help strings to HelpHanlder.h   " <<endl;
-  cout << "\t"<<" 6. GetHandler class can be used as referenced example" <<endl;
-  cout << "\t"<<" 7. DO NOT implement any request/response logic directly in main() but write own handlers" <<endl<<endl;
+    cout <<endl<< "Design: " << endl;
+    cout << "-------" << endl<<endl;
+    cout << "To develop new cli handler:" <<endl;
+    cout << "\t"<<" 1. Design your handler commands " <<endl;
+    cout << "\t"<<" 2. Inherite cli handler from abstract Cli class." <<endl;
+    cout << "\t"<<"    Handler should implement at least processCli() function " <<endl;
+    cout << "\t"<<" 3. Add your handler to mapHandlers in Handlers::init()/Handlers.cpp " <<endl;
+    cout << "\t"<<" 4. Add help to own handler with -h option " <<endl;
+    cout << "\t"<<" 5. GetHandler class can be used as referenced example" <<endl;
 
-  cout << "At start, protoclient calls corresponding handlers and sends request to server" <<endl;
-  cout << "File tbd.txt under svn includes list of improvements still to be done " <<endl<<endl;
- */
+    cout << "In proto example rtclient starts and sends echo request to server" <<endl;
 }
 
-void HelpHandler::examples()
-{
-   std::cout <<endl<<"Examples : "<< endl;
-   std::cout <<endl<<"./rtclient server"<<endl<<endl;
-}
 
 
 

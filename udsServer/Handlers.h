@@ -9,20 +9,20 @@
 typedef std::map<std::string, Cli *> argHandlersType ;
 
 /*
-*   Cli handlers storage. 
-*   Signleton pattern used because handlers should be reachable 
-*   from several classes. 
+*   Cli handlers storage.
+*   Signleton pattern used because handlers should be reachable
+*   from several classes.
 */
-class Handlers
+    class Handlers
 {
     public:
-        static Handlers& Instance() 
+        static Handlers& Instance()
         {
           static Handlers ch;
           return ch;
         }
 
-        virtual  ~Handlers(); 
+        virtual  ~Handlers();
         void init() ;
 
         Cli * getHandler(const char * arg);
@@ -34,6 +34,6 @@ class Handlers
       Handlers& operator=(Handlers const&);     // assignmet op is hidden
 
       argHandlersType mHandlers;
-}; 
+};
 
 #endif

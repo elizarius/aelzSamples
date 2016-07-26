@@ -2,14 +2,13 @@ C++ development plan
 --------------------
 
 1   Implement different type client / server applications as framework, f.i  piped, forked
- - implement socket class as separate folder
- - refactor udsServer to use socket class
- - look how socket container implement in C++ 11 standard
- - implement  client  sending structured message to server instead of simple hello 
-
------------------------------
-
-3   Find good discussion group, f.e in Linkedin, stackoverflow
+    - Simple Makefiles tool chain
+    - implement socket class as separate folder
+    - refactor udsServer to use socket class
+    - implement  client  sending structured message to server instead of simple hello
+    - implement raw socket
+    - look how socket container implement in C++ 11 standard
+------------------------------------------
 
 4   Pipe, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
 5   Pipe,  implement  with client / server applications
@@ -39,6 +38,7 @@ C++ development plan
 25  Apply for open sourced github C++ project
 26  Blockmon framework, implemenent several
 2   Find useful MFP C examples
+3   Find good discussion group, f.e in Linkedin, stackoverflow
 
 DONE
 ----

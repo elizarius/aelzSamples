@@ -2,10 +2,9 @@
 #include "SocketReader.h"
 #include "SocketWriter.h"
 
-namespace cpp_samples
-{
+using namespace cpp_samples;
 
-Socket::Socket(SocketType type) : fd_(0), type_(type), currReqID_(0), socketHandle_(EMPTY_SOCKETHANDLE)
+Socket::Socket(SocketType type) : fd_(0), type_(type)
 {
 	socketWriterPtr_ = new SocketWriter(this);
 	socketReaderPtr_ = new SocketReader(this);
@@ -19,47 +18,52 @@ Socket::~Socket()
 
 void
 Socket::send(Msg* pMsg)
-	throw (MessagingException, SyncException)
+	throw (CppSamplesException)
 {
 	if (!pMsg)
-		throw EXCEPTION("invalid message");
+		throw CppSamplesException("invalid message");
 
-	pMsg->id_ = 0;
 	_send(pMsg);
 }
 
 
 void
 Socket::sendReply(unsigned int _reqID, Msg* pMsg)
-	throw (MessagingException, SyncException)
+	throw (CppSamplesException)
 {
+/*
 	if (!pMsg)
-		throw EX_MESSAGINGEXCEPTION("invalid message");
+		throw CppSamplesException("invalid message");
 
 	if (!_reqID)
-		throw EX_MESSAGINGEXCEPTION("invalid request id");
+		throw CppSamplesException("invalid request id");
 
 	pMsg->id_ = _reqID;
 	pMsg->type_ = MT_REPLY;
 	_send(pMsg);
+*/
 }
 
 void
 Socket::_send(Msg* pMsg)
-	throw (MessagingException, SyncException)
+	throw (CppSamplesException)
 {
+// AELZ_31 wtire here send message part */
+/*
 	TransportData transportData(pMsg);
 	int rc = socketWriterPtr_->writeData(&transportData);
 	if (rc != SocketWriter::COMPLETED)
 	{
 		throw EX_MESSAGINGEXCEPTION_ERR("send failed", errno);
 	}
+*/
 }
 
 void
 Socket::_receiveReply(Msg* pMsg)
-	throw (SyncException)
+	throw (CppSamplesException)
 {
+/*
     bool found = false;
     RequestMonitorHandle handle = EMPTY_REQUESTMONITORHANDLE;
     hashIterType iter;
@@ -103,13 +107,15 @@ Socket::_receiveReply(Msg* pMsg)
                             << std::endl;
         delete pMsg;
     }
+*/
 }
 
 
 void
 Socket::_messageReceived(Msg* pMsg)
-	throw (SyncException)
+	throw (CppSamplesException)
 {
+/*
 	if (pMsg->getID() && pMsg->type_ == MT_REPLY)
 	{
         _receiveReply(pMsg);
@@ -122,12 +128,14 @@ Socket::_messageReceived(Msg* pMsg)
 	{
 		messageReceived(pMsg);
 	}
+*/
 }
 
 void
 Socket::_connectionClosed()
-	throw (SyncException)
+	throw (CppSamplesException)
 {
+/*
     socketWriterPtr_->close();
 	// invalidate all bending requests
 	hashIterType iter;
@@ -136,7 +144,8 @@ Socket::_connectionClosed()
 	for (iter = requestsStore_.begin(); iter != requestsStore_.end(); iter++)
 	{
 		handle = iter->second;
-		pthread_mutex_lock(&handle->lock_);
+		pthread_mutex_lock(&handle->lock_);	pMsg->id_ = 0;
+
 		handle->state_ = RS_INVALID;
 		handle->replyMsgPtr_ = 0;
 		pthread_cond_signal(&handle->cond_);
@@ -145,7 +154,8 @@ Socket::_connectionClosed()
 
 	// infrom application
 	connectionClosed();
+*/
 }
 
-}
+
 

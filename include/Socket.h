@@ -7,7 +7,6 @@
 #include <sys/un.h>
 #include <unistd.h>
 
-
 #include <netdb.h>
 
 #include "CppSamplesException.h"
@@ -19,6 +18,7 @@ namespace  cpp_samples
 	 * ST_TCP			->	TCP socket
 	 * ST_UNIX_DOMAIN	->	unix domain socket
      * ST_UDP           ->  User datagram protocol
+     * AELZ_11: add raw socket class
 	 */
     enum SocketType
 	{
@@ -78,15 +78,12 @@ namespace  cpp_samples
 			 * This is the callback that is used to report the connection closing
 			 * to application. The default implementation of this method is NOP.
 			 */
-			virtual void connectionClosed() throw()
-			{
-			}
+			virtual void connectionClosed() throw() { }
 
 			/**
 			 * send a normal message
 			 * @param pMsg a pointer to transfered message, note that the life time of message is kept in the application i.e. the application needs to delete the message after this call returns.
-			 * @exception MessagingException is thrown if sending of message failed
-			 * @exception SyncException is thrown if any of pthread calls fail
+			 * @exception Exception is thrown if sending of message failed
 			 */
 			 void send(Msg* pMsg) throw (CppSamplesException);
 
@@ -94,8 +91,7 @@ namespace  cpp_samples
 			 * send a reply to some request, note that the life time of reply message is kept in the application i.e. the application needs to delete the message after this call returns.
 			 * @param reqID the id of the request to which the reply is send.
 			 * @param pMsg a pointer to reply message.
-			 * @exception MessagingException is thrown if sending of message failed
-			 * @exception SyncException is thrown if any of pthread calls fail
+			 * @exception Exception is thrown if sending of message failed
 			 */
 			void sendReply(unsigned int reqID, Msg* pMsg) throw (CppSamplesException);
 
@@ -177,7 +173,7 @@ namespace  cpp_samples
 
 			/**
 			 * internal connection closed callback
-			 * exception SyncException is thrown in case any of pthread calls fail
+			 * exception exception is thrown in case any of pthread calls fail
 			 */
 			void _connectionClosed() throw (CppSamplesException);
 
@@ -201,12 +197,13 @@ namespace  cpp_samples
 			/**
 			 * socket file descriptor
 			 */
-            int         fd_;
+            int fd_;
 
 			/**
 			 * socket type
 			 */
 			SocketType  type_;
+
 
 			/**
 			 * address of socket

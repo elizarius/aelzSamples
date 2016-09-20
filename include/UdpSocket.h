@@ -83,7 +83,7 @@ namespace COMMUTIL_NAMESPACE
 			 * @implemented 1
 			 */
             void _send(Msg* pMsg, sockaddr* addr) throw (MessagingException, SyncException);
-	};	
+	};
 }
 
 #endif

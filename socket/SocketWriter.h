@@ -1,9 +1,9 @@
 #ifndef CPP_SAMPLES_SOCKETWRITER_H_
 #define CPP_SAMPLES_SOCKETWRITER_H_
 
-//#include <sys/types.h>
-//#include <sys/socket.h>
-//#include <pthread.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <pthread.h>
 //#include <queue>
 
 
@@ -51,8 +51,8 @@ namespace cpp_samples
 			 * @return sending result
 			 * @exception SyncException is thrown in case any of pthread calls fail
 	    	 */
-			int writeData(TransportData* pTransportData) throw (SyncException);
-			int writeData(TransportData* pTransportData,sockaddr* addr) throw (SyncException);
+			int writeData(void* pTransportData) throw (CppSamplesException);
+			int writeData(void* pTransportData,sockaddr* addr) throw (CppSamplesException);
 
 
         /**
@@ -86,12 +86,11 @@ namespace cpp_samples
 				adjustedSize_ = 0;
 				totalMsgLen_ = 0;
 				msgVecLen_ = 0;
-				transportDataPtr_ = 0;
-                if (udpMsgBuffer_)
-                {
-                    memset(udpMsgBuffer_, 0, udpMsgSize_);
-                }
-                udpMsgSize_ = 0;
+//                if (udpMsgBuffer_)
+//                {
+//                    memset(udpMsgBuffer_, 0, udpMsgSize_);
+//                }
+//                udpMsgSize_ = 0;
 			}
 
 			/**
@@ -109,13 +108,13 @@ namespace cpp_samples
 
 //			TransportData* 		transportDataPtr_;
 
-//			FastLock			lock_;
 
 
 
 
 			/** for handling partial writes */
 			int 				nleft_;
+//			FastLock			lock_;
 			int 				index_;
 			__ptr_t 			adjustedPointer_;
 			size_t  			adjustedSize_;

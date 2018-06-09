@@ -1,7 +1,41 @@
 C++ development plan
 --------------------
 
-1   Implement different type client / server applications as framework, f.i  piped, forked
+1.  Get ctag working with vim / C++ code
+
+2.  ES (elementary sample)  threading, C++ 11, 14, or 17 plus structured reading / writing
+    to file , based on threadFilter example
+
+3.  ES: Other comments from  threadFilter
+
+4   ES: multiple threads C
+
+5   ES: Double linked list C++
+
+6.  ES:  Binary three C++ / C
+
+7.  Refresh current socket example (C++) in terms of C++14
+
+8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
+
+9.  ES:  Semaphor simple example C++
+
+10. ES: Mutex lock / unlock
+
+11. ES:  Fork, simple example  look existing C/C++, C++14
+    Read TCP interprocess communication book, as start point
+
+12. Singlethon with threads , see and re-implement Baha example in C++14 style
+
+13.  ES: queue impl
+
+14   Threading models, read about exisitng , implement something different than posix threads
+
+15. CLI simple elementary implementation, or reuse existing: getlongopt
+
+16  Look StatePattern , because useful for state machine
+
+17. Implement different type client / server applications as framework, f.i  piped, forked
     - Simple Makefiles tool chain
     - implement socket class as separate folder
     - refactor udsServer to use socket class
@@ -10,21 +44,12 @@ C++ development plan
     - look how socket container implement in C++ 11 standard
 ------------------------------------------
 
-4   Pipe, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
-5   Pipe,  implement  with client / server applications
-6   Semaphor simple example on C++
 
-7   Thread, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
 8   Threading models, read about exisitng , implement something different than posix threads
-9   Fork, simple example  look existing C/C++. Read TCP interprocess communication book, as start point
-10  Read latest ISO C++ standard , run useful examples", such as threads.mutex impl
 
-11  Singlethon with threads , see and re-implement Baha example
 12  See other useful examples in SS_Commutil/test
 13  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
 14  Look ""protclient"" Antti's example , as alternative ""getopt_long"
-15  Copy SS_EdgeRoutingMgr / SS_EdgeRouitngCommon as example of protomsgs lib implementation,
-  find place  where it is implemented on socket as protocol ( 4 bytes , length of message added)
 
 16  Coding style guide , read carefully , check questionable proposals
 17. BoostCpp  , read , execute  useful examples
@@ -33,12 +58,8 @@ C++ development plan
 20  Template method , implement to myCpp samples
 21  Read available books , execute some examples from them ": ScottMayers, Q&A old course , stl maps etc"
 22  Find book : refactoring for old systems  , read and execute examples"
-23  Develop StatePattern , because useful for state machine
 24  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
-25  Apply for open sourced github C++ project
-26  Blockmon framework, implemenent several
 2   Find useful MFP C examples
-3   Find good discussion group, f.e in Linkedin, stackoverflow
 
 DONE
 ----

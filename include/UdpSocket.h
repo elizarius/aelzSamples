@@ -6,8 +6,7 @@
 #include  "MessagingException.h"
 #include  "SyncException.h"
 
-
-namespace COMMUTIL_NAMESPACE
+namespace cpp_samples
 {
 	class UdpSocket: public Socket
 	{
@@ -16,7 +15,7 @@ namespace COMMUTIL_NAMESPACE
 		public:
             UdpSocket();
 
-            virtual ~UdpSocket(); 
+            virtual ~UdpSocket();
 
 			virtual void messageReceived(Msg* msg, sockaddr* senderAddr) throw()
 			{

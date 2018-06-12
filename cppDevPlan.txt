@@ -1,12 +1,7 @@
 C++ development plan
---------------------
+---------------------
 
-1.  Get ctag working with vim / C++ code
-
-2.  ES (elementary sample)  threading, C++ 11, 14, or 17 plus structured reading / writing
-    to file , based on threadFilter example
-
-3.  ES: Other comments from  threadFilter
+3.  ES: Other comments from  thf
 
 4   ES: multiple threads C
 
@@ -16,11 +11,11 @@ C++ development plan
 
 7.  Refresh current socket example (C++) in terms of C++14
 
+15. CLI simple elementary implementation, or reuse existing: getlongopt
+
 8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
 
 9.  ES:  Semaphor simple example C++
-
-10. ES: Mutex lock / unlock
 
 11. ES:  Fork, simple example  look existing C/C++, C++14
     Read TCP interprocess communication book, as start point
@@ -69,5 +64,11 @@ DONE
 0.4 Pass through myCpp samples. Implement interested not working, f.i change makefiles
 0.5 Go throw old Brain bench tests , implement quiestionable samples
 0.6 Install IDE: CodeBlocks
-
 1.1 Implement  udsServer / client appl
+
+
+1.  Get ctag working with vim / C++ code
+2.  ES (elementary sample)  threading, C++ 11, 14, or 17 plus structured reading / writing
+    to file , based on threadFilter example
+10. ES: Mutex lock / unlock
+

@@ -1,0 +1,5 @@
+### 1.  How to make this program with pthread library
+gcc -o aelz thread-ex.c -lpthread
+
+### 2. More info about threads
+https://computing.llnl.gov/tutorials/pthreads/

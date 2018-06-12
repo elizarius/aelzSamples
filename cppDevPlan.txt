@@ -1,9 +1,10 @@
 C++ development plan
 ---------------------
 
-3.  ES: Other comments from  thf
+=======
+3.  ES: check reading from stdin in different forms
 
-4   ES: multiple threads C
+
 
 5   ES: Double linked list C++
 
@@ -17,12 +18,18 @@ C++ development plan
 
 9.  ES:  Semaphor simple example C++
 
+8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
+
 11. ES:  Fork, simple example  look existing C/C++, C++14
     Read TCP interprocess communication book, as start point
 
-12. Singlethon with threads , see and re-implement Baha example in C++14 style
+9. ES: Introduce exception processing for errors, such as "Not floating number".
+Both threads will raise errors, they processed in main function.
 
-13.  ES: queue impl
+10. ES: Introduce own signal handler in addition to  exit(1). It will catch signals like "Ctrl-Z, Ctrl-C" and gracefully shut down process(with "***Finished" message)
+
+
+12. Singlethon with threads , see and re-implement Baha example in C++14 style
 
 14   Threading models, read about exisitng , implement something different than posix threads
 
@@ -39,6 +46,9 @@ C++ development plan
     - look how socket container implement in C++ 11 standard
 ------------------------------------------
 
+13.  As further development,  introduce advanced messaging between reader / filter threads., f.i. pipe based or socket based.
+       It could make system more reliable (and difficult) instead of using one inputQueue, that in fact is shared  resource.
+       That require more investigation.
 
 8   Threading models, read about exisitng , implement something different than posix threads
 
@@ -71,4 +81,10 @@ DONE
 2.  ES (elementary sample)  threading, C++ 11, 14, or 17 plus structured reading / writing
     to file , based on threadFilter example
 10. ES: Mutex lock / unlock
+1.  ES: conditional variable  // AELZ_01 see example in Cpp.com
 
+9.  ES:  Semaphore simple example C++.
+    AELZ_02 combination mutex / condition_variable should be used instead.
+    See example in Cpp.com
+
+4   ES: multiple threads C

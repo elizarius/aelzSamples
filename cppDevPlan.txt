@@ -2,38 +2,29 @@ C++ development plan
 ---------------------
 
 =======
-3.  ES: check reading from stdin in different forms
-
-
+2. simple Cpp samples , pass through, add to repo
 
 5   ES: Double linked list C++
 
 6.  ES:  Binary three C++ / C
 
-7.  Refresh current socket example (C++) in terms of C++14
-
 15. CLI simple elementary implementation, or reuse existing: getlongopt
 
-8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
+=======
 
-9.  ES:  Semaphor simple example C++
+
+7.  Refresh current socket example (C++) in terms of C++14
 
 8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
 
 11. ES:  Fork, simple example  look existing C/C++, C++14
     Read TCP interprocess communication book, as start point
 
-9. ES: Introduce exception processing for errors, such as "Not floating number".
-Both threads will raise errors, they processed in main function.
-
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch signals like "Ctrl-Z, Ctrl-C" and gracefully shut down process(with "***Finished" message)
-
 
 12. Singlethon with threads , see and re-implement Baha example in C++14 style
 
 14   Threading models, read about exisitng , implement something different than posix threads
-
-15. CLI simple elementary implementation, or reuse existing: getlongopt
 
 16  Look StatePattern , because useful for state machine
 
@@ -88,3 +79,5 @@ DONE
     See example in Cpp.com
 
 4   ES: multiple threads C
+
+3.  ES: check reading from stdin in different forms: see threads.cpp / factory_method_1.cpp

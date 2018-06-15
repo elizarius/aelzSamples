@@ -19,7 +19,6 @@ using namespace std;
 typedef std::queue<double> dqType;
 std::mutex mtx;
 
-
 /*
 *   Singleton to process input queue
 */
@@ -44,9 +43,6 @@ class queueHandler {
         dqType _inputQueue;
 };
 
-
-
-
 // Read double floating numbers for stdin, first  thread entry function
 void readN()
 {
@@ -68,7 +64,7 @@ void readN()
 }
 
 
-// Write numbers for stdin, second thread entry function
+// Write numbers file second thread entry function
 void writeN()
 {
     queueHandler & qh =queueHandler::Instance();

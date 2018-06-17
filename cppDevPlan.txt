@@ -1,28 +1,20 @@
 C++ development plan
 ---------------------
-
-=======
-2. simple Cpp samples , pass through, add to repo
-
-5   ES: Double linked list C++
-
 6.  ES:  Binary three C++ / C
-
-15. CLI simple elementary implementation, or reuse existing: getlongopt
-
+11. ES:  Fork, simple example  look existing C/C++,
+    reimplement in C++11, if required 
 =======
 
 
-7.  Refresh current socket example (C++) in terms of C++14
+7.  Refresh current socket example (C++) in terms of C++11
 
 8.  ES: Pipe, look existing C/C++. Read TCP interprocess communication book, as start point
 
-11. ES:  Fork, simple example  look existing C/C++, C++14
-    Read TCP interprocess communication book, as start point
+
 
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch signals like "Ctrl-Z, Ctrl-C" and gracefully shut down process(with "***Finished" message)
 
-12. Singlethon with threads , see and re-implement Baha example in C++14 style
+12. Singlethon with threads , see and re-implement Baha example in C++11 style
 
 14   Threading models, read about exisitng , implement something different than posix threads
 
@@ -43,9 +35,8 @@ C++ development plan
 
 8   Threading models, read about exisitng , implement something different than posix threads
 
-12  See other useful examples in SS_Commutil/test
+12  See other useful examples in Commutil/test
 13  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
-14  Look ""protclient"" Antti's example , as alternative ""getopt_long"
 
 16  Coding style guide , read carefully , check questionable proposals
 17. BoostCpp  , read , execute  useful examples
@@ -55,7 +46,7 @@ C++ development plan
 21  Read available books , execute some examples from them ": ScottMayers, Q&A old course , stl maps etc"
 22  Find book : refactoring for old systems  , read and execute examples"
 24  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
-2   Find useful MFP C examples
+
 
 DONE
 ----
@@ -66,6 +57,7 @@ DONE
 0.5 Go throw old Brain bench tests , implement quiestionable samples
 0.6 Install IDE: CodeBlocks
 1.1 Implement  udsServer / client appl
+
 
 
 1.  Get ctag working with vim / C++ code
@@ -80,4 +72,9 @@ DONE
 
 4   ES: multiple threads C
 
-3.  ES: check reading from stdin in different forms: see threads.cpp / factory_method_1.cpp
+2. simple Cpp samples , pass through, add to repo
+3.  ESS: check reading from stdin in different forms: see threads.cpp / factory_method_1.cpp
+5   ES: Double linked list C++, single linked list
+15. CLI simple elementary implementations
+16. Read Scott Mayers about difference between STL containers
+

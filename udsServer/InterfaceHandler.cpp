@@ -1,5 +1,5 @@
-
 #include <cstdlib>
+#include <cstring>
 #include <cstdio>
 
 #include "InterfaceHandler.h"
@@ -7,18 +7,16 @@
 extern "C"
 {
 #include <getopt.h>
-#include <string.h>
 #include <bits/sockaddr.h>
 #include <linux/netlink.h>
 #include <sys/un.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <getopt.h>
-#include <string.h>
 #include <unistd.h>
 }
 
-/* AELZ_01 tbd  change it later, when implement socket class */
+/* AELZ_01  change it later, when implement socket class */
 #define UDS_NAME1 "./uds_socket"
 
 
@@ -85,16 +83,16 @@ int InterfaceHandler::processCli(int argc, char * argv[])
 
 
 /**
-*  Function sends message to HALI via uds
+*  Function sends message to server via uds
 */
 int InterfaceHandler::sendHaliMsg()
 {
-    std::cout << "Sending message to HALI" << std::endl;
+    std::cout << "Sending message to Uds Server" << std::endl;
     struct sockaddr_un servAddr;
     int sockFd, msgSize ;
     int respCode = 0 ;
 
-    char msgBuffer[1024]; // AELZ_02 , change later when implement socket class
+    char msgBuffer[1024];
 
     /* Create socket for incoming connections */
     if ((sockFd = socket(PF_UNIX, SOCK_STREAM, 0)) < 0)

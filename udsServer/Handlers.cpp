@@ -14,7 +14,6 @@ mHandlers.insert(argHandlersType::value_type ("iface",  new InterfaceHandler));
 
 /*
 *   Get Cli handler instance with argument name as key parameter.
-*
 */
 Cli * Handlers::getHandler(const char * arg)
 {
@@ -40,6 +39,5 @@ Handlers::~Handlers()
     theIt->second = 0 ;
 
   }
- mHandlers.clear();
-
+  mHandlers.clear();
 }

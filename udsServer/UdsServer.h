@@ -29,7 +29,6 @@ class UdsServer : public Cli
         *  and send response to client
         */
         int sendResponse(int sockFd);
-
 };
 
 #endif

@@ -6,8 +6,10 @@
 #include <ratio>
 
 
-/* Custom exception  example */
-
+/* Custom exception example
+ * see also exception in aelzSamples/include
+ *
+ */
 using namespace std;
 using namespace std::chrono;
 

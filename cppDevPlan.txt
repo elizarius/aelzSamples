@@ -1,7 +1,6 @@
 C++ development plan
 ---------------------
 
-
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch signals like "Ctrl-Z, Ctrl-C" and gracefully shut down process(with "***Finished" message)
 
 6.  ES:  Binary three C++ / C

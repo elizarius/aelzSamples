@@ -29,6 +29,8 @@ int main()
 {
     std::cout <<aelz_space::rREMOTE<<std::endl;
     std::cout <<aelz_space::pREMOTE<<std::endl;
+    aelz_space::RouteType rt = aelz_space::rREJECT;
+    std::cout <<"Print variable rt: "<< rt<<std::endl;
     return 0;
 }
 

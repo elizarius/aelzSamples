@@ -13,11 +13,10 @@ typedef std::map<std::string, Cli *> argHandlersType ;
 *   Signleton pattern used because handlers should be reachable
 *   from several classes.
 */
-    class Handlers
+class Handlers
 {
     public:
-        static Handlers& Instance()
-        {
+        static Handlers& Instance() {
           static Handlers ch;
           return ch;
         }
@@ -29,9 +28,9 @@ typedef std::map<std::string, Cli *> argHandlersType ;
 
 
     private:
-      Handlers (){}                             // ctor is hidden
+      Handlers (){}                             // default ctor is hidden
       Handlers(Handlers const&);                // copy ctor is hidden
-      Handlers& operator=(Handlers const&);     // assignmet op is hidden
+      Handlers& operator=(Handlers const&);     // assignment op is hidden
 
       argHandlersType mHandlers;
 };

@@ -11,7 +11,7 @@ using namespace std;
 int main ()
 {
     std::forward_list<int> mylist = { 34, 77, 16, 2 };
-      std::forward_list<int>::iterator it;
+    std::forward_list<int>::iterator it;
     std::cout << "mylist contains:";
     for ( it = mylist.begin(); it != mylist.end(); ++it )
         std::cout << ' ' << *it;

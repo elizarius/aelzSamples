@@ -1,14 +1,6 @@
 C++ development plan
 ---------------------
 
-05. Double list: implement in C
-
-06. ES:  Binary three C++ / C
-
-12. Singlethon with threads, see and re-implement old  example in C++11 style
-
-
-
 01. DB handler to communicate to postgre container:
 
     - open connection
@@ -30,6 +22,8 @@ C++ development plan
     - calculate performance (time to delete)
 
 
+06. ES:  Binary three C++ / C
+12. Singlethon with threads, see and re-implement old  example in C++11 style
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
 process(with "***Finished" message)
@@ -49,13 +43,8 @@ process(with "***Finished" message)
 
 12  See other useful examples in util/test
 13  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
-
-16  Coding style guide , read carefully , check questionable proposals
-17. BoostCpp  , read , execute  useful examples
-18  Event management framework , read and run examples : sockets etc .
 19  Abstact Factory , read and implement useful example
 20  Template method , implement to myCpp samples
-21  Read available books , execute some examples from them ": ScottMayers, Q&A old course , stl maps etc"
 22  Find book : refactoring for old systems  , read and execute examples"
 24  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
 
@@ -91,4 +80,4 @@ DONE
 
 04. Double list (chain): chain rewrite with list pattern
 03. Double list: chain rewrite without container
-
+05. Double list: implement in C

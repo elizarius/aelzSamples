@@ -3,12 +3,12 @@ C++ development plan
 
 01. DB handler to communicate to postgre container:
 
-    - open connection
+    - open connection  Done
 
-    - create X data bases according to referenced schema (thread_1)
-    - add Y records to DBs (thread_2)
+
+    - create X relations according to referenced schema (thread_1)
+    - add Y records to relations (thread_2)
     - calculate performance (time to add)
-
 
     - add cli handler
 

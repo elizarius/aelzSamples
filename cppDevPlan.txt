@@ -3,7 +3,13 @@ C++ development plan
 
 01. DB handler to communicate to postgre container:
 
-    - open connection  Done
+    - open connection                       Done
+    - create  DBConnection class            Done
+
+
+
+
+    - create table  from Cpp appl
 
 
     - create X relations according to referenced schema (thread_1)

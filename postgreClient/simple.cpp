@@ -6,24 +6,16 @@ using namespace std;
 
 int main() {
 
-//    PGconn  *conn;
     PGresult *res;
     int     rec_count;
     int     row;
     int     col;
 
-    SqlConnection  sqlConn("postgres", "localhost", "postgres", "aelzpassword");
-    PGconn  *conn=sqlConn.getConnection();
-
-//    conn = PQconnectdb("dbname=postgres host=localhost user=postgres password=aelzpassword");
-//    if (PQstatus(conn) == CONNECTION_BAD) {
-//            std::cout<<"We were unable to connect to the database"<<std::endl;
-//        return 1;
-//    }
+    SqlConnection  sqlConn;
+    sqlConn.init("postgres", "localhost", "postgres", "aelzpassword");
+    PGconn  *conn = sqlConn.getConnection();
 
     res = PQexec(conn, "update people set phonenumber=\'3587776665\' where id=3");
-
-    std::cout<<"AELZ ,first res "<<PQresultStatus(res)<<std::endl;
 
     res = PQexec(conn, "select lastname,firstname,phonenumber from people order by id");
 
@@ -44,7 +36,7 @@ int main() {
     std::cout<<"=========================="<<std::endl;
 
     PQclear(res);
-    PQfinish(conn);
+    sqlConn.finalize();
     return 0;
 }
 

@@ -18,11 +18,11 @@ class SqlConnection {
 
         SqlConnection ():conn_(0) {}
 
-        SqlConnection(
-                    const std::string& dbname,
-                    const std::string& hostname,
-                    const std::string& user,
-                    const std::string& password);
+        void init(
+                const std::string& dbname,
+                const std::string& hostname,
+                const std::string& user,
+                const std::string& password);
 
         // copy ctor
         SqlConnection(SqlConnection const&);
@@ -35,6 +35,7 @@ class SqlConnection {
             return conn_;
         }
 
+        void finalize();
     private:
         PGconn  *conn_;
 };

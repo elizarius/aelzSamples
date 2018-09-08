@@ -6,7 +6,7 @@
 
 using namespace std;
 
-SqlConnection::SqlConnection(
+void SqlConnection::init(
                 const std::string& dbname,
                 const std::string& hostname,
                 const std::string& user,
@@ -20,3 +20,7 @@ SqlConnection::SqlConnection(
     }
 }
 
+void SqlConnection::finalize() {
+    PQfinish(conn_);
+    std::cout<<"SQL Connection: closed "<<std::endl;
+}

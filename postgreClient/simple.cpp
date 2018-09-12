@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <iostream>
 #include "SqlConnection.h"
+#include "SqlHandler.h"
 
 using namespace std;
 

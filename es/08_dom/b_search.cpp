@@ -39,32 +39,28 @@ public:
     static bool contains(const Node& root, int value)
     {
         int rootValue = root.getValue();
-        if (rootValue == value;
+        if (rootValue == value) {
+            std::cout<<"AELZ step 1 equal: ";
             return true;
-
-        std::cout<<"AELZ_01 step 1 pass"<<std::endl;
+        }
 
          int leftValue;
          if (value < rootValue) {
             // go to left node
             if (root.getLeft() !=0) {
-                leftValue = root.getLeft()->getValue();
-                if (leftValue == value)
-                return true;
+                std::cout<<"AELZ step 2 in left: ";
+                return BinarySearchTree::contains(*(root.getLeft()), value);
             }  else
              return false;
         }
-        std::cout<<"AELZ_02 step 2 pass"<<std::endl;
 
+        /* check right branch */
+        int rightValue;
+        if (root.getRight() !=0){
+            std::cout<<"AELZ step 3 in right:";
+            return BinarySearchTree::contains(*(root.getRight()), value);
+        } return false;
 
-         int rightValue;
-         if (root.getRight() !=0){
-             rightValue = root.getRight()->getValue();
-              if (rightValue == value)
-                return true;
-         } return false;
-        
-        
      return false;
     }
 };
@@ -76,9 +72,9 @@ int main()
     Node n3(3, NULL, NULL);
     Node n2(2, &n1, &n3);
 
-    std::cout << BinarySearchTree::contains(n2, 3);
-//    std::cout << BinarySearchTree::contains(n2, 5);
-//    std::cout << BinarySearchTree::contains(n2, 2);
-
+    std::cout << BinarySearchTree::contains(n2, 3)<<std::endl;
+    std::cout << BinarySearchTree::contains(n2, 2)<<std::endl;
+    std::cout << BinarySearchTree::contains(n2, 1)<<std::endl;
+    std::cout << BinarySearchTree::contains(n2, 5)<<std::endl;
 }
 #endif

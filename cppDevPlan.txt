@@ -6,9 +6,6 @@ C++ development plan
     - open connection                       Done
     - create  DBConnection class            Done
 
-
-
-
     - create table  from Cpp appl
 
 
@@ -28,7 +25,6 @@ C++ development plan
     - calculate performance (time to delete)
 
 
-06. ES:  Binary three C++ / C
 12. Singlethon with threads, see and re-implement old  example in C++11 style
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
@@ -57,6 +53,7 @@ process(with "***Finished" message)
 
 DONE
 ----
+06. ES:  Binary three C++ / C
 0.1 Sort C/C++ into separate folders
 0.2 Run unclear C examples from 00_basicC
 0.3 Find other C examples, analyse, copy useful to 00_basicC: IP

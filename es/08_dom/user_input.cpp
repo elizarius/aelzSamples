@@ -7,15 +7,13 @@ class TextInput
 {
 public:
     virtual void add(char c)
-    { 
+    {
        value_ = value_ + c;
 
     }
-    
     virtual std::string getValue() { return value_; }
-    
-private: 
-    std::string value_;
+private:
+   std::string value_;
 };
 
 
@@ -27,13 +25,11 @@ public:
      if (isdigit(c)) {
        value_ = value_ + c;
      }
-    
     }
     virtual std::string getValue() { return value_; }
 
 private:
  std::string value_;
-   
 };
 
 

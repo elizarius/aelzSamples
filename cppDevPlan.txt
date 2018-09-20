@@ -26,6 +26,7 @@ C++ development plan
 
 
 12. Singlethon with threads, see and re-implement old  example in C++11 style
+
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
 process(with "***Finished" message)

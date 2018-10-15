@@ -57,7 +57,7 @@ Cli * Handlers::getHandler(const char * arg)
   {
     return theIterator->second;
   }
-  else 
+  else
    return 0 ;
 }
 

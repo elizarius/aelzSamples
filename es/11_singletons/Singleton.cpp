@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 
+/* Mayers singleton with static private member */
+
+
 using namespace std;
 class Singleton
 {

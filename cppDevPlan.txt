@@ -8,7 +8,6 @@ C++ development plan
 
     - create table  from Cpp appl
 
-
     - create X relations according to referenced schema (thread_1)
     - add Y records to relations (thread_2)
     - calculate performance (time to add)
@@ -24,8 +23,6 @@ C++ development plan
     - delete Y records from DBs (thread_5)
     - calculate performance (time to delete)
 
-
-12. Singlethon with threads, see and re-implement old example in C++11 style
 
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
@@ -54,6 +51,8 @@ process(with "***Finished" message)
 
 DONE
 ----
+
+00. Singlethon with mutex, see in C++11 style
 06. ES:  Binary three C++ / C
 0.1 Sort C/C++ into separate folders
 0.2 Run unclear C examples from 00_basicC

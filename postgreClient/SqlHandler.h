@@ -32,7 +32,7 @@ class SqlHandler {
         void finalize(){}
 
     private:
-        SqlConnection  *sqlconn_;
+       const SqlConnection  *sqlconn_;
 };
 
 #endif

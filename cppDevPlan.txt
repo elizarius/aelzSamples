@@ -1,6 +1,16 @@
 C++ development plan
 ---------------------
 
+00. Demo application, demonstrating possible elementary samples usage:
+    - abstract cli class
+    - container with handlers,where key is cli option,
+    - cli hanlder includes virtual usage function
+    - initiator, loading into container handlers (f.i. codility handlers)
+    - demonstrator, running different functions
+    - demonstrator should print file name, location and short description,
+      what done by function.
+
+
 01. DB handler to communicate to postgre container:
 
     - open connection                       Done
@@ -45,42 +55,10 @@ process(with "***Finished" message)
 13  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
 19  Abstact Factory , read and implement useful example
 20  Template method , implement to myCpp samples
-22  Find book : refactoring for old systems  , read and execute examples"
 24  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
 
 
 DONE
 ----
-
 00. Singlethon with mutex, see in C++11 style
-06. ES:  Binary three C++ / C
-0.1 Sort C/C++ into separate folders
-0.2 Run unclear C examples from 00_basicC
-0.3 Find other C examples, analyse, copy useful to 00_basicC: IP
-0.4 Pass through myCpp samples. Implement interested not working, f.i change makefiles
-0.5 Go throw old Brain bench tests , implement quiestionable samples
-0.6 Install IDE: CodeBlocks
-1.1 Implement  udsServer / client appl
 
-1.  Get ctag working with vim / C++ code
-2.  ES (elementary sample)  threading, C++ 11, 14, or 17 plus structured reading / writing
-    to file , based on threadFilter example
-10. ES: Mutex lock / unlock
-1.  ES: conditional variable  // AELZ_01 see example in Cpp.com
-9.  ES:  Semaphore simple example C++.
-    AELZ_02 combination mutex / condition_variable should be used instead.
-    See example in Cpp.com
-
-4   ES: multiple threads C
-2. simple Cpp samples , pass through, add to repo
-3.  ESS: check reading from stdin in different forms: see threads.cpp / factory_method_1.cpp
-5   ES: Double linked list C++, single linked list
-15. CLI simple elementary implementations
-16. Read Scott Mayers about difference between STL containers
-11. ES:  Fork, simple example  look existing C/C++
-7.  Refresh current socket example (C++) in terms of C++11
-16  StatePattern, because useful for state machine
-
-04. Double list (chain): chain rewrite with list pattern
-03. Double list: chain rewrite without container
-05. Double list: implement in C

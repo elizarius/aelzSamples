@@ -17,8 +17,7 @@
 #define RCVBUFSIZE 1024
 #define UDS_NAME "./uds_socket"
 
-class UdsServer : public Cli
-{
+class UdsServer : public aelzns::Cli {
     public:
         UdsServer(){};
         virtual int processCli(int c, char * argv[]);

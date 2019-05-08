@@ -18,22 +18,28 @@ int main ()
     std::cout <<std::endl;
 
 
-    std::cout <<"Insert members to start and end of list:  ";
+    std::cout <<"Insert members to start and end of list:  "<<std::endl;
 
     // Replace first node
     mylist.front() =11;
+
+    std::cout << "mylist modified:";
+    for ( it = mylist.begin(); it != mylist.end(); ++it )
+        std::cout << ' ' << *it;
+    std::cout <<std::endl;
+
 
     // Insert before first node
     mylist.insert_after ( mylist.before_begin(), 99 );
     mylist.insert_after ( mylist.begin(), 1025 );
     it = mylist.begin();
 
+
    //   Insert into beginning of list:
    mylist.push_front(200);
 
     // Insert at end could not be done easily, below is not working
     //mylist.insert_after ( mylist.end(), 1111 );
-
 
     for (it = mylist.begin(); it != mylist.end(); ++it )
         std::cout << ' ' << *it;

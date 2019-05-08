@@ -13,7 +13,7 @@ int UdsServer::processCli(int c, char * argv[])
 
     int msgSize = 0 ;                   /* received message size */
 
-    cout<<"running in server mode..."<<endl;
+    cout<<__PRETTY_FUNCTION__<<": running in server mode..."<<endl;
 
     /* Create socket for incoming connections */
     if ((servSock = socket(PF_UNIX, SOCK_STREAM, 0)) < 0)
@@ -46,7 +46,7 @@ int UdsServer::processCli(int c, char * argv[])
 
     for (;;)
     {
-        cout<<" UdsServer: waiting new client connection..."<<endl;
+        cout<<__PRETTY_FUNCTION__<<": waiting new client connection..."<<endl;
 
         /* Wait for a client to connect */
         if ((clientSock = accept(servSock,0,0)) < 0)

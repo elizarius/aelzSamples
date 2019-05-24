@@ -4,9 +4,11 @@
 #
 ################################################################
 
+export BASE_DIR=/home/aelz/repa/aelzSamples
 CXX      = g++
-CXXFLAGS = -g
-INCLUDES = -I.
+CXXFLAGS = -g -std=c++11
+INCLUDES = -I.\
+		   -I${BASE_DIR}/include
 
 LIBS     =
 

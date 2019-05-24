@@ -12,6 +12,7 @@ int UdsServer::processCli(int c, char * argv[])
     struct sockaddr_un echoServAddr;    /* Local address */
 
     int msgSize = 0 ;                   /* received message size */
+    std::string stop_receiving = argv[0];
 
     cout<<__PRETTY_FUNCTION__<<": running in server mode..."<<endl;
 
@@ -56,7 +57,6 @@ int UdsServer::processCli(int c, char * argv[])
         }
 
         // AELZ_702: clarify diff between write /recv and implement the same for both parts
-
         /* Receive message from client */
         if ((msgSize = recv(clientSock, msgBuffer, RCVBUFSIZE, 0)) <= 0)
         {
@@ -68,9 +68,10 @@ int UdsServer::processCli(int c, char * argv[])
         cout<<"received bytes from socket: "<< msgSize<<endl;
         msgBuffer[msgSize] = 0;
         cout <<"Msg from client : "<< msgBuffer<<endl;
-
         sendResponse(clientSock);
-
+        if (stop_receiving == "exit_after_one") {
+            break;        
+        }
      } // end for
      close(clientSock);
      close(servSock);
@@ -83,7 +84,7 @@ int UdsServer::sendResponse(int sockFd)
 {
     char msgBuffer[RCVBUFSIZE];
 
-    int msgSize = sprintf(msgBuffer, "Hi , from server");
+    int msgSize = sprintf(msgBuffer, "Hi, from server");
     write(sockFd, msgBuffer , msgSize);
     close(sockFd);
     return 0;

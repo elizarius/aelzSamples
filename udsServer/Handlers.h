@@ -6,7 +6,7 @@
 
 #include "cli.h"
 
-typedef std::map<std::string, Cli *> argHandlersType ;
+typedef std::map<std::string, aelzns::Cli *> argHandlersType ;
 
 /*
 *   Cli handlers storage.
@@ -24,7 +24,7 @@ class Handlers
         virtual  ~Handlers();
         void init() ;
 
-        Cli * getHandler(const char * arg);
+        aelzns::Cli * getHandler(const char * arg);
 
 
     private:

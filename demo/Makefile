@@ -1,12 +1,12 @@
 ################################################################
 #
-#       Makefile for demo 
+#       Makefile for demo
 #
 ################################################################
 
 export BASE_DIR=/home/aelz/repa/aelzSamples
 CXX      = g++
-CXXFLAGS = -g -std=c++11 
+CXXFLAGS = -g -std=c++11
 INCLUDES =	-I. \
 			-I${BASE_DIR}/include \
 			-I${BASE_DIR}/udsServer
@@ -20,7 +20,9 @@ LIBS =	-lpthread
 OBJECTS =	main.o \
 			Loader.o \
 			UdsSocketDemo.o \
-			${BASE_DIR}/udsServer/UdsServer.o
+			${BASE_DIR}/udsServer/UdsServer.o \
+			${BASE_DIR}/udsServer/InterfaceHandler.o
+
 
 
 
@@ -39,5 +41,6 @@ demo: $(OBJECTS)
 .PHONY: clean
 clean:
 	rm -f  *.o \
-	rm demo
+	rm demo \
+	rm -f uds_socket
 

@@ -4,6 +4,8 @@
 #include "UdsServer.h"
 
 using namespace std;
+using namespace aelzns;
+
 
 void Handlers::init()
 {

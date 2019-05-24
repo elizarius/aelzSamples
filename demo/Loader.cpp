@@ -36,9 +36,9 @@ Cli * Loader::getHandler(const char * arg) {
 void Loader::runAll(int argc, char* argv[]) {
   argHandlersType::iterator theIt;
   for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-    cout<<"******  Handler started: "<<theIt->first<<endl<<endl;
+    cout<<"**********  Handler started: "<<theIt->first<<endl<<endl;
     theIt->second->processCli(argc, argv);
-    cout<<"******  Handler completed: "<<theIt->first<<endl<<endl;
+    cout<<endl<<"**********  Handler completed: "<<theIt->first<<endl<<endl;
   }
 }
 

@@ -6,7 +6,7 @@
 
 int helpMessage(const char  * msg);
 
-class HelpHandler : public Cli
+class HelpHandler : public aelzns::Cli
 {
     public:
         HelpHandler();

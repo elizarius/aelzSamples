@@ -7,6 +7,7 @@
 
 
 using namespace std;
+using namespace aelzns;
 
 
 int main(int argc, char* argv[])
@@ -15,7 +16,7 @@ int main(int argc, char* argv[])
     int respCode= 0 ;
 
     /** Init cli handlers storage. */
-    Handlers & cmdHandlers = Handlers::Instance() ;
+    Handlers & cmdHandlers = Handlers::Instance();
     cmdHandlers.init();
 
     if (argc < 2) {

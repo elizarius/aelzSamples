@@ -5,7 +5,6 @@
  *  Unix domain server CLI handler
  */
 #include "cli.h"
-/* AELZ_02 tbd , move to socket class all socket related info */
 #include <sys/un.h>
 #include <sys/types.h>
 #include <sys/socket.h>

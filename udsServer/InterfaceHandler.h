@@ -2,11 +2,13 @@
 #define _IF_HANDLER_
 
 #include "cli.h"
+#include <string>
+
 
 /**
  *  Interface CLI handler
  */
-class InterfaceHandler : public Cli
+class InterfaceHandler : public aelzns::Cli
 {
     public:
         InterfaceHandler(): hIface_("./rtcclient iface --if-name  <name>  [--mtu <int>]")

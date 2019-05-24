@@ -4,6 +4,8 @@
 #include <string>
 #include <thread>
 #include "UdsServer.h"
+#include "InterfaceHandler.h"
+
 
 void udsS(){
     UdsServer us;
@@ -11,12 +13,15 @@ void udsS(){
     /* 
     * Historical function name, actually nothing to cli but socket listener 
     */
-    us.processCli(1, 0);
+    char* argus[] = {"exit_after_one" };
+    us.processCli(1, argus);
     return;
 }
 
 void udsCl(){
-    std::cout<<__FUNCTION__<<" ********* Finished  "<<std::endl;
+    InterfaceHandler ih;
+    char* argus[] = {"aelz","--if-name", "zzz" };
+    ih.processCli(3, argus);
     return;
 }
 

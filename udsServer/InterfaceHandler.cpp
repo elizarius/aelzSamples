@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstdio>
+#include <iostream>
+#include <string>
 
 #include "InterfaceHandler.h"
 
@@ -16,7 +18,6 @@ extern "C"
 #include <unistd.h>
 }
 
-/* AELZ_01  change it later, when implement socket class */
 #define UDS_NAME1 "./uds_socket"
 
 
@@ -54,7 +55,7 @@ int InterfaceHandler::processCli(int argc, char * argv[])
                 break ;
 
             case 'h':
-                cout<<hIface_<<endl;
+                std::cout<<hIface_<<std::endl;
                 return 0;
 
             default:
@@ -87,7 +88,7 @@ int InterfaceHandler::processCli(int argc, char * argv[])
 */
 int InterfaceHandler::sendHaliMsg()
 {
-    std::cout << "Sending message to Uds Server" << std::endl;
+    std::cout <<__PRETTY_FUNCTION__<<" Sending message to Uds Server" << std::endl;
     struct sockaddr_un servAddr;
     int sockFd, msgSize ;
     int respCode = 0 ;
@@ -119,7 +120,7 @@ int InterfaceHandler::sendHaliMsg()
 
     msgSize = read(sockFd, msgBuffer, 1024);
     msgBuffer[msgSize] = 0 ;
-    cout <<"Response: "<< msgBuffer<<endl;
+    cout <<__PRETTY_FUNCTION__<<" Response: "<< msgBuffer<<endl;
 
     return 0;
 }

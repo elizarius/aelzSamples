@@ -24,7 +24,7 @@ class sec_class
 
    virtual void printInstance ()
    {
-    std::cout<<" sec class instance called  "<<std::endl ;  
+    std::cout<<" sec class instance called  "<<std::endl;
    }
 };
 

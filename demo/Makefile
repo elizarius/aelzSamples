@@ -20,10 +20,10 @@ LIBS =	-lpthread
 OBJECTS =	main.o \
 			Loader.o \
 			UdsSocketDemo.o \
+			FwdList.o \
+			DomWorker.o \
 			${BASE_DIR}/udsServer/UdsServer.o \
 			${BASE_DIR}/udsServer/InterfaceHandler.o
-
-
 
 
 #OBJECTS := $(wildcard *.o)

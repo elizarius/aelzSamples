@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <chrono>
 #include "UdsServer.h"
 #include "InterfaceHandler.h"
 
@@ -33,6 +34,7 @@ UdsSocketDemo::UdsSocketDemo(){}
 /* Activate 2 server / client threads and send control to them */  
 int UdsSocketDemo::processCli(int c, char * argv[]) {
     thread first(udsS);
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     thread second(udsCl);
 
     first.join();

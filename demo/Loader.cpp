@@ -1,5 +1,7 @@
 #include "Loader.h"
 #include "UdsSocketDemo.h"
+#include "FwdList.h"
+#include "DomWorker.h"
 #include <iostream>
 
 using namespace std;
@@ -7,6 +9,8 @@ using namespace aelzns;
 
 void Loader::init() {
   mHandlers.insert(argHandlersType::value_type ("udsSocket", new UdsSocketDemo));
+  mHandlers.insert(argHandlersType::value_type ("fwdList", new FwdList));
+  mHandlers.insert(argHandlersType::value_type ("simpleSamples", new DomWorker));
 }
 
 void Loader::usage() {
@@ -15,7 +19,7 @@ void Loader::usage() {
   argHandlersType::iterator theIt;
 
   for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-  cout<<"    "<<theIt->first<<endl;
+    cout<<"    "<<theIt->first<<endl;
   }
 }
 /*
@@ -34,11 +38,14 @@ Cli * Loader::getHandler(const char * arg) {
 }
 
 void Loader::runAll(int argc, char* argv[]) {
+  
   argHandlersType::iterator theIt;
+  cout<<endl<<"**  Application demonstrates basic C++ samples and techniques **"<<endl<<endl;
+
   for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-    cout<<"**********  Handler started: "<<theIt->first<<endl<<endl;
+    cout<<"***\t"<<theIt->first<<" started\t***"<<endl;
     theIt->second->processCli(argc, argv);
-    cout<<endl<<"**********  Handler completed: "<<theIt->first<<endl<<endl;
+    cout<<"***\t"<<theIt->first<<" finished\t***"<<endl<<endl<<endl;
   }
 }
 

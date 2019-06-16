@@ -2,21 +2,21 @@ C++ development plan
 ---------------------
 
 00. Demo application, demonstrating possible elementary samples usage:
-    - abstract cli class
-    - container with handlers,where key is cli option,
-    - cli hanlder includes virtual usage function
-    - initiator, loading into container handlers (f.i. codility handlers)
-    - demonstrator, running different functions
-    - demonstrator should print file name, location and short description,
-      what done by function.
+    - abstract cli class            OK
+    - container with handlers,where key is cli option OK
+    - cli hanlder includes virtual usage function     OK
+    - LOADER, loading into container handlers (f.i. codility handlers)  OK
+    - Start codility and update examples step by step
 
+    - demo should print file name, location and short description,
+      what done by function.
 
 01. DB handler to communicate to postgre container:
 
     - open connection                       Done
     - create  DBConnection class            Done
 
-    - create table  from Cpp appl
+    - create table from Cpp appl
 
     - create X relations according to referenced schema (thread_1)
     - add Y records to relations (thread_2)
@@ -32,7 +32,6 @@ C++ development plan
 
     - delete Y records from DBs (thread_5)
     - calculate performance (time to delete)
-
 
 10. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down

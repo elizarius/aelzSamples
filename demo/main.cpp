@@ -12,7 +12,6 @@ int main(int argc, char* argv[])
     Loader & loader = Loader::Instance();
     loader.init();
 
-
     if (argc == 1) {
         loader.runAll(argc, argv);
         return 0;
@@ -28,7 +27,7 @@ int main(int argc, char* argv[])
             cliHandler->processCli(argc, argv );
           }
           else  {
-            cout<<"****** Error: wrong  handler:"<<argv[1]<<endl;
+            cout<<"****** Error: wrong  handler: "<<argv[1]<<endl;
           }
       }
     }

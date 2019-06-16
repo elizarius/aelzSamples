@@ -2,7 +2,7 @@
 #include <string>
 #include <mutex>
 
-/* AELZ traditional singleton with mutex */
+/* Traditional singleton with mutex */
 
 std::mutex mtx;
 

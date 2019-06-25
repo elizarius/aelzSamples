@@ -2,12 +2,16 @@
 #include "UdsSocketDemo.h"
 #include "FwdList.h"
 #include "DomWorker.h"
+#include <thread>
+#include <chrono>
 #include <iostream>
 
 using namespace std;
 using namespace aelzns;
 
 void Loader::init() {
+  cout<<endl<<"**  Application demonstrates basic C++ samples and techniques **"<<endl<<endl;
+
   mHandlers.insert(argHandlersType::value_type ("udsSocket", new UdsSocketDemo));
   mHandlers.insert(argHandlersType::value_type ("fwdList", new FwdList));
   mHandlers.insert(argHandlersType::value_type ("simpleSamples", new DomWorker));
@@ -40,12 +44,11 @@ Cli * Loader::getHandler(const char * arg) {
 void Loader::runAll(int argc, char* argv[]) {
   
   argHandlersType::iterator theIt;
-  cout<<endl<<"**  Application demonstrates basic C++ samples and techniques **"<<endl<<endl;
-
   for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
     cout<<"***\t"<<theIt->first<<" started\t***"<<endl;
     theIt->second->processCli(argc, argv);
     cout<<"***\t"<<theIt->first<<" finished\t***"<<endl<<endl<<endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
   }
 }
 

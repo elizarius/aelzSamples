@@ -1,6 +1,5 @@
-#ifndef _DOM_WORKER_
-#define _DOM_WORKER_
-
+#ifndef _DOM_WORKER_H_
+#define _DOM_WORKER_H_
 
 /**
  *  Elementary samples sourced from codility and dome 
@@ -11,17 +10,15 @@
 #include "Task.h"
 #include <list>
 
-
-namespace aelzns
-{
+namespace aelzns {
   class DomWorker : public Cli  {
     public:
-      DomWorker() {};
-      ~DomWorker(){};
+      DomWorker();
+      virtual ~DomWorker();
       virtual int processCli(int c, char * argv[]);
+
     private:
       std::list<Task *> _tasks;
-
   };
 }
 #endif

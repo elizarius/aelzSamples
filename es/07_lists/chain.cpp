@@ -27,7 +27,6 @@ class ChainRing
 
 class Chain
 {
-
     public:
         Chain(): leftDistance_(0),
                  rightDistance_(0)

@@ -9,9 +9,13 @@ C++ development plan
     - Start codility and update examples step by step
 
     - demo should print file name, location and short description,
-      what done by function.
+      what done by function ?
 
-01. DB handler to communicate to postgre container:
+   
+
+01. Add pcpu appl to demo 
+
+02. DB handler to communicate to postgre container:
 
     - open connection                       Done
     - create  DBConnection class            Done
@@ -33,11 +37,11 @@ C++ development plan
     - delete Y records from DBs (thread_5)
     - calculate performance (time to delete)
 
-10. ES: Introduce own signal handler in addition to  exit(1). It will catch
+03. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
 process(with "***Finished" message)
 
-17. Implement different type client / server applications as framework, f.i  piped, forked
+04. Implement different type client / server applications as framework, f.i  piped, forked
     - Simple Makefiles tool chain
     - implement socket class as separate folder
     - refactor udsServer to use socket class
@@ -46,15 +50,10 @@ process(with "***Finished" message)
     - look how socket container implement in C++ 11 standard
 ------------------------------------------
 
-13.  Introduce advanced messaging between reader / filter threads., f.i. pipe based or socket based.
-     It could make system more reliable (and difficult) instead of using one inputQueue, that in fact is shared  resource.
-     That require more investigation.
-
-12  See other useful examples in util/test
-13  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
-19  Abstact Factory , read and implement useful example
-20  Template method , implement to myCpp samples
-24  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
+05  See other useful examples in util/test
+06  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
+07  Abstact Factory , read and implement useful example
+08  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
 
 
 DONE

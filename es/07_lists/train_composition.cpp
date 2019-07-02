@@ -18,23 +18,20 @@ public:
 
     int detachWagonFromLeft()
     {
-       int wagId = trainChain.front(); 
+       int wagId = trainChain.front();
        trainChain.pop_front();
        return wagId;
     }
 
     int detachWagonFromRight()
     {
-       int wagId = trainChain.back(); 
+       int wagId = trainChain.back();
        trainChain.pop_back();
        return wagId;
     }
-    
+
 private:
    std::list<int> trainChain;
-    
-    
-    
 };
 
 int main()
@@ -44,4 +41,5 @@ int main()
     tree.attachWagonFromLeft(13);
     std::cout << tree.detachWagonFromRight() << "\n"; // 7 
     std::cout << tree.detachWagonFromLeft(); // 13
+    std::cout <<std::endl;
 }

@@ -21,7 +21,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
   if (value < rootValue) {
     // go to left node
     if (root.getLeft() !=0) {
-      std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check left node:  "<<endl;
+      //std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check left node:  "<<endl;
       return BinarySearchTree::contains(*(root.getLeft()), value);
     }  else
         return false;
@@ -30,7 +30,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
     /* check right branch */
     int rightValue;
     if (root.getRight() !=0) {
-      std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check right node:  "<<endl;
+      //std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check right node:  "<<endl;
       return BinarySearchTree::contains(*(root.getRight()), value);
     } 
 

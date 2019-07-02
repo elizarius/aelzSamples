@@ -2,6 +2,9 @@
 #include "BinarySearchTree.h"
 #include "BinaryGap.h"
 #include "CommonNames.h"
+#include "CyclicRotation.h"
+#include "FrogJump.h"
+#include "Permutation.h"
 #include <iostream>
 #include <iterator>
 
@@ -12,7 +15,11 @@ DomWorker::DomWorker() {
   _tasks.push_front(new BinarySearchTree);
   _tasks.push_front(new BinaryGap);
   _tasks.push_front(new CommonNames);
-}
+  _tasks.push_front(new CyclicRotation);
+  _tasks.push_front(new FrogJump);
+  _tasks.push_front(new Permutation);
+
+   }
 
 DomWorker::~DomWorker() {
 
@@ -28,6 +35,7 @@ DomWorker::~DomWorker() {
 int DomWorker::processCli(int c, char * argv[]) {
   for (auto itr = _tasks.begin(); itr != _tasks.end(); ++itr) {
     reinterpret_cast<Task*>(*itr)->execute();
+    std::cout<<std::endl;
   }
   return 0;
 }

@@ -8,7 +8,7 @@
 // with using XOR operation, find uniquie unpaired member in array
 
 namespace aelzns {
-    
+
 class OddOcurance : public Task {
   public:
     OddOcurance() { }
@@ -17,15 +17,15 @@ class OddOcurance : public Task {
     virtual bool execute() {
 
       std::cout<<"\t"<<__PRETTY_FUNCTION__<<" unpaired member in array "<<std::endl;
-      
+
       int odd1 = solution(x, y, d);
       std::cout<<"\t"<<__PRETTY_FUNCTION__<<"\t unpaired: "<<odd1<<std::endl;
-     
+
     }
   private:
 
   int solution(std::vector<int> &A) {
-    
+
     int odd1 = 0;
     for(int i=0; i < A.size(); i++) {
         odd1 ^= A[i];

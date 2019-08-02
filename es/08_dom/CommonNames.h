@@ -34,7 +34,7 @@ class CommonNames : public Task {
       }
 
       for (auto it = out1.begin(); it != out1.end(); ++it) {
-        std::cout<< "\tAELZ set scope: "<<*it<<std::endl;
+        //std::cout<< "\tAELZ set scope: "<<*it<<std::endl;
         out2.push_back(*it);
       }
       return out2;

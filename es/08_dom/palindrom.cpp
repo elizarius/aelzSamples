@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 
-// Analyze whether word is palindrome or not. 
+// Analyze whether word is palindrome or not.
 // Palindrom is same word when read in both directions
 class Palindrome
 {

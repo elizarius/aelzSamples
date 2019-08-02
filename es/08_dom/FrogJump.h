@@ -30,7 +30,7 @@ class FrogJump : public Task {
 
       int n_jumps = solution(x, y, d);
       std::cout<<"\t"<<__PRETTY_FUNCTION__<<"\t jumps: "<<n_jumps<<std::endl;
-     
+      return true;  
     }
   private:
 

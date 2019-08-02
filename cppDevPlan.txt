@@ -6,16 +6,17 @@ C++ development plan
     - container with handlers,where key is cli option OK
     - cli hanlder includes virtual usage function     OK
     - LOADER, loading into container handlers (f.i. codility handlers)  OK
-    - Start codility and update examples step by step
+    - Start codility and update examples step by step                   OK
+    
+    - demo should print file name, location and short description, what done by function ?
 
-    - demo should print file name, location and short description,
-      what done by function ?
+01. Analyze C++11/14 principal differences from previous standard.
+    Run examples on C++11/14 new features 
 
-   
+02. Add pcpu appl to demo
 
-01. Add pcpu appl to demo 
 
-02. DB handler to communicate to postgre container:
+03. DB handler to communicate to postgre container:
 
     - open connection                       Done
     - create  DBConnection class            Done
@@ -37,11 +38,11 @@ C++ development plan
     - delete Y records from DBs (thread_5)
     - calculate performance (time to delete)
 
-03. ES: Introduce own signal handler in addition to  exit(1). It will catch
+04. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
 process(with "***Finished" message)
 
-04. Implement different type client / server applications as framework, f.i  piped, forked
+05. Implement different type client / server applications as framework, f.i  piped, forked
     - Simple Makefiles tool chain
     - implement socket class as separate folder
     - refactor udsServer to use socket class
@@ -50,11 +51,10 @@ process(with "***Finished" message)
     - look how socket container implement in C++ 11 standard
 ------------------------------------------
 
-05  See other useful examples in util/test
-06  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
-07  Abstact Factory , read and implement useful example
-08  Advanced C++ technik , book in trainings/CPP"Read  , check and implement several examples
-
+06  See other useful examples in util/test
+07  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
+08  Abstact Factory , read and implement useful example
+09  Advanced C++ technik , book in trainings/CPPRead  , check and implement several examples
 
 DONE
 ----

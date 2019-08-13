@@ -5,7 +5,7 @@
 
 namespace aelzns {
 
-// Abstract task to be inherited by task executors 
+// Abstract task to be inherited by task executors
 class Task : public NonCopyable {
     public:
         Task() {};

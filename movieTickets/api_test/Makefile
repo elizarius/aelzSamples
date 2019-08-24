@@ -9,6 +9,7 @@ export BASE_DIR=../../
 CXX      = g++
 CXXFLAGS = -g -std=c++11
 INCLUDES =	-I. \
+			-I${BASE_DIR}/include \
 			-I${BASE_DIR}/movieTickets
 
 

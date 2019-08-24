@@ -3,6 +3,7 @@
 #include "UsersDb.h"
 #include "SessionsDb.h"
 #include "TheatersDb.h"
+#include "Exception.h"
 
 #include <iostream>
 #include <mutex>
@@ -10,8 +11,9 @@
 #include <iostream>
 #include <ctime>
 
-using namespace std;
+using namespace aelzns;
 using namespace movie;
+using namespace std;
 
 std::mutex mtx_cr;
 std::mutex mtx_del;
@@ -22,8 +24,8 @@ std::mutex mtx_ses_del;
 RetCode User::create(std::string userid, std::string password) {
 
   if (isExist(userid))  {
-    cout <<"Error:  user already exist: "<<userid<<endl;
-    return RC_USER_EXIST;
+    string err_msg = "Error:  user already exist: " + userid ;
+    throw aelzns::Exception(err_msg.c_str());
   }
 
   Schema & schema = Schema::Instance();

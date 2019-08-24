@@ -3,9 +3,12 @@
 #include <cassert>
 #include "Schema.h"
 #include "api.h"
+#include "Exception.h"
+
 
 using namespace std;
 using namespace movie;
+using namespace aelzns;
 
   class UserApiTest {
     public:
@@ -23,7 +26,16 @@ using namespace movie;
       }
 
       void testCreateSameUserFails() {
-        assert (_user.create("aela", "huy") == 1);
+        try {
+          _user.create("aela", "huy");
+        }
+        catch (Exception& e) {
+          std::cout << "Exception caught USER CREATION test " << std::endl;
+          std::cout << e.what() << std::endl;
+          std::cout << e.getFunctionName() << std::endl;
+
+          return;
+        }
       }
 
       void testUserExistsOK() {
@@ -106,7 +118,13 @@ using namespace movie;
       }
 
       void testCreateSameUserFails() {
-        assert (_user.create("admin", "zapa") == 1);
+        try {
+          _user.create("admin", "zapa");
+        }
+        catch (Exception& e) {
+          std::cout << "Exception caught ADMIN test " << std::endl;
+          return;
+        }
       }
 
       void testDeleteAnyUserOK() {
@@ -125,36 +143,50 @@ using namespace movie;
 
 int main(int argc, char* argv[])
 {
+
   /*  Init DB Schema. */
   Schema & schema = Schema::Instance();
-  schema.init();
 
-  /****  USER API MODULE  ****/
-  UserApiTest & ust = UserApiTest::Instance();
-  ust.testCreateUserOK();
-  ust.testCreateSecondUserOK();
-  ust.testCreateSameUserFails();
-  ust.testUserExistsOK();
-  ust.testDeleteUserOK();
-  ust.testUserDoesNotExist();
+  try {
+    schema.init();
 
-  /****  SESSION MANAGEMENT API MODULE  ****/
-  SessionApiTest & st = SessionApiTest::Instance();
-  int id = st.testCreateSessionOK();
-  st.testGetTheatersOK();
-  st.testGetBookingInfoOK(45);
-  st.testBookTicketsOK(id);
-  st.testGetBookingInfoOK(42);
-  st.testDeleteSessionOK(id);
+    /****  USER API MODULE  ****/
+    UserApiTest & ust = UserApiTest::Instance();
+    ust.testCreateUserOK();
+    ust.testCreateSecondUserOK();
+    ust.testCreateSameUserFails();
+    ust.testUserExistsOK();
+    ust.testDeleteUserOK();
+    ust.testUserDoesNotExist();
 
-  /****  ADMIN MANAGEMENT API MODULE  ****/
-  AdminApiTest & adm = AdminApiTest::Instance();
+    /****  SESSION MANAGEMENT API MODULE  ****/
+    SessionApiTest & st = SessionApiTest::Instance();
+    int id = st.testCreateSessionOK();
+    st.testGetTheatersOK();
+    st.testGetBookingInfoOK(45);
+    st.testBookTicketsOK(id);typedef std::map<std::string, Db *> argHandlersType;
 
-  adm.testCreateUserOK();
-  adm.testCreateSameUserFails();
-  adm.testModifyUserFails();
-  adm.testDeleteAnyUserOK();
+    st.testGetBookingInfoOK(42);
+    st.testDeleteSessionOK(id);
 
-  cout <<endl<<"** API TESTS FINISHED SUCCESSFULLY **"<<endl;
+    /****  ADMIN MANAGEMENT API MODULE  ****/
+    AdminApiTest & adm = AdminApiTest::Instance();
+
+    adm.testCreateUserOK();
+    adm.testCreateSameUserFails();
+    adm.testModifyUserFails();
+    adm.testDeleteAnyUserOK();
+
+    cout <<endl<<"** API TESTS FINISHED SUCCESSFULLY **"<<endl;
+  }
+  catch (Exception& e) {
+    std::cout << "Exception caught" << std::endl;
+    std::cout << e.what() << std::endl;
+  }
+  catch (std::exception& e) {
+    std::cout << "std::exception caught" << std::endl;
+    std::cout << e.what() << std::endl;
+  }
+
   return 0;
 }

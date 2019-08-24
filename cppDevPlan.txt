@@ -16,19 +16,19 @@ C++ development plan
 
 02. Play with algorithms
 
-02. Look examples of regexp library
+03. Look examples of regexp library (C++11 standard)
 
-07  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
+04  Factory method , including getopt_long as input and ""Handlers"" singleton as storage.
     Finalize examples.
 
-08  Abstact Factory, read and implement useful example
+05  Abstact Factory, read and implement useful example
     Finalize examples.
 
-02. Add pcpu appl to demo
+06. Add pcpu appl to demo
 
 ***************************
 
-03. DB handler to communicate to postgre container:
+07. DB handler to communicate to postgre container:
 
     - open connection                       Done
     - create  DBConnection class            Done
@@ -50,11 +50,11 @@ C++ development plan
     - delete Y records from DBs (thread_5)
     - calculate performance (time to delete)
 
-04. ES: Introduce own signal handler in addition to  exit(1). It will catch
+08. ES: Introduce own signal handler in addition to  exit(1). It will catch
 signals like "Ctrl-Z, Ctrl-C" and gracefully shut down
 process(with "***Finished" message)
 
-05. Implement different type client / server applications as framework, f.i  piped, forked
+09. Implement different type client / server applications as framework, f.i  piped, forked
     - Simple Makefiles tool chain
     - implement socket class as separate folder
     - refactor udsServer to use socket class
@@ -63,8 +63,9 @@ process(with "***Finished" message)
     - look how socket container implement in C++ 11 standard
 ------------------------------------------
 
-06  See other useful examples in util/test
-09  Advanced C++ technik , book in trainings/CPPRead  , check and implement several examples
+10  See other useful examples in util/test
+
+11  Advanced C++ technik , book in trainings/CPPRead  , check and implement several examples
 
 DONE
 ----

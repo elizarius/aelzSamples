@@ -25,17 +25,21 @@ namespace aelzns {
        * @param errorCode the error code associated with this exception
        *
        */        
-      // Exception(const char* errorMsg,
-      //           int errorCode = 0,
-      //           const char* fileName = 0,
-      //           unsigned short lineNo = 0,
-      //           const char* functionName = 0): errorMsgPtr_(errorMsg),
-	    //                                         fileNamePtr_(fileName),
-	    //                                         functionNamePtr_(functionName),
-	    //                                         lineNo_(lineNo),
-	    //                                         errorCode_(errorCode) {}
-      Exception(const char* errorMsg): errorMsgPtr_(errorMsg) {
-        functionNamePtr_ = __FUNCTION__;
+      Exception(const char* errorMsg,
+                const char* fileName ,
+                unsigned short lineNo ,
+                const char* functionName,
+                int errorCode): errorMsg_(errorMsg),
+	                                            fileName_(fileName),
+	                                            functionName_(functionName),
+	                                            lineNo_(lineNo),
+	                                            errorCode_(errorCode) {}
+      Exception(const char* errorMsg): errorMsg_(errorMsg) {
+        functionName_ = __FUNCTION__;
+        fileName_ = __FILE__;
+        lineNo_ = __LINE__;
+			  errorCode_ = -1;
+
       }
 
       /**
@@ -50,14 +54,14 @@ namespace aelzns {
       * @return the error message
       */        
       const char* getErrorMsg() const {
-        return errorMsgPtr_.c_str();
+        return errorMsg_.c_str();
       }
 
       /**
       * @return  a pointer to the c-string representing the error message
       */        
       virtual const char* what() const throw() {
-        return errorMsgPtr_.c_str(); 
+        return errorMsg_.c_str(); 
       }
 
       /**
@@ -69,14 +73,14 @@ namespace aelzns {
         return lineNo_;
       }
 
-
       /**
       *
       * @return The file name where the exception occured.
       *
       */
       const char* getFileName() const {
-        return fileNamePtr_.c_str();
+        return fileName_.c_str();
+
       }
 
       /**
@@ -85,12 +89,12 @@ namespace aelzns {
       *
       */
       const char* getFunctionName() const {
-        	return functionNamePtr_.c_str();
+        	return functionName_.c_str();
       }
 
-	    friend std::ostream&
-	    operator<<(std::ostream& arOStream,
-		       const Exception& _exception);
+	    //friend std::ostream&
+	    //operator<<(std::ostream& arOStream,
+		  //     const Exception& _exception);
 
       /**
       *
@@ -103,12 +107,14 @@ namespace aelzns {
 	    
     private:
 
-	    std::string errorMsgPtr_;
-      std::string fileNamePtr_;
-      std::string functionNamePtr_;
+	    std::string errorMsg_;
+      std::string fileName_;
+      std::string functionName_;
       unsigned short lineNo_;
 			int errorCode_;
     };
+
+#define AELZ_EXCEPTION(msg,err) Exception(msg, __FILE__, __LINE__, __func__, err)
 }
 
 #endif 

@@ -41,6 +41,8 @@ Use cases
 
 6. ENUM Error codes instead of 0,1  OK
 
+8. Exception handling instead of traditional status codes  OK
+
 
 TBD
 ---
@@ -48,8 +50,6 @@ TBD
 7. Multiple requests concurency is provided by mutexes.
    It can be improved to "task fabric concept" when all api tasks serialized
    to message queue and another threads fetches from queue and executes tasks
-
-8.  Exception handling instead of traditional status codes
 
 9.  Modify users, modify booking data by admin
 

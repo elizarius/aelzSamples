@@ -25,7 +25,7 @@ RetCode User::create(std::string userid, std::string password) {
 
   if (isExist(userid))  {
     string err_msg = "Error:  user already exist: " + userid ;
-    throw aelzns::Exception(err_msg.c_str());
+    throw AELZ_EXCEPTION(err_msg.c_str(), RC_USER_EXIST);
   }
 
   Schema & schema = Schema::Instance();
@@ -43,8 +43,7 @@ RetCode User::create(std::string userid, std::string password) {
 
 RetCode User::remove(std::string userid, std::string password) {
   if (!isExist(userid))  {
-    cout <<"Warning: does not exist "<<userid<<endl;
-    return RC_USER_NOT_EXIST;
+    throw AELZ_EXCEPTION("User not exist", RC_USER_NOT_EXIST);
   }
 
   Schema & schema = Schema::Instance();
@@ -56,8 +55,7 @@ RetCode User::remove(std::string userid, std::string password) {
     auto it  =  usersMap.find(userid);
 
     if (it->second->_password != password) {
-      cout <<"Error: wrong password for user: "<<userid<<endl;
-      return RC_WRONG_PASSWORD;
+      throw AELZ_EXCEPTION("Wrong password ", RC_WRONG_PASSWORD);
     }
 
     mtx_del.lock();
@@ -88,8 +86,7 @@ int Session::create(std::string userid, std::string password) {
   if (usersDb) {
     bool isOkUser = dynamic_cast<UsersDb *>(usersDb)->isValidUser(userid, password);
     if (!isOkUser) {
-      cout <<"Error: wrong user credentials: "<<userid<<endl;
-      return 0;
+      throw AELZ_EXCEPTION("Wrong credentials", RC_WRONG_PASSWORD);
     }
   }
 
@@ -225,13 +222,10 @@ std::vector<int>  Session::bookTickets(int session_id,
   return reserved_tickets;
 }
 
-
 RetCode Admin::create(std::string userid, std::string password) {
 
-  RetCode rc = User::create(userid, password);
-  if  (rc != 0) 
-    return rc;
-  
+  User::create(userid, password);
+
   Schema & schema = Schema::Instance();
   Db* usersDb = schema.getHandler("users");
 
@@ -255,10 +249,8 @@ RetCode Admin::remove(std::string userid) {
   Db* usersDb = schema.getHandler("users");
 
   if (usersDb) {
-
     usersType & usersMap  = dynamic_cast<UsersDb *>(usersDb)->getDb();
     auto it  =  usersMap.find(userid);
-
     mtx_del.lock();
     usersMap.erase(it);
     mtx_del.unlock();
@@ -272,15 +264,14 @@ RetCode Admin::resetBookingInfo(std::string theater_name) {
   Db* theaDb = schema.getHandler("theaters");
 
   if (!theaDb) {
-    cout <<"Error: theaters DB does not exist"<<endl;
-    return RC_DB_NOT_EXIST;
+    throw AELZ_EXCEPTION("Theaters DB does not exist", RC_DB_NOT_EXIST);
+
   }
 
   theatersType & theaters  = dynamic_cast<TheatersDb *>(theaDb)->getTheaters();
   auto it = theaters.find(theater_name);
   if (it == theaters.end()) {
-    cout <<"Error: theater does not exist: "<<theater_name<<endl;
-    return RC_DB_NOT_EXIST;
+    throw AELZ_EXCEPTION("Theater does not exist", RC_DB_NOT_EXIST);
   }
 
   TimeMovieSeatsType & tms = it->second->getBookings();

@@ -67,7 +67,8 @@ process(with "***Finished" message)
 
 11  Advanced C++ technik , book in trainings/CPPRead  , check and implement several examples
 
+
 DONE
 ----
-00. Singlethon with mutex, see in C++11 style
+00. Singlethon with mutex, see es
 

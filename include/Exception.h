@@ -38,8 +38,7 @@ namespace aelzns {
         functionName_ = __FUNCTION__;
         fileName_ = __FILE__;
         lineNo_ = __LINE__;
-			  errorCode_ = -1;
-
+			  errorCode_ = 0;
       }
 
       /**
@@ -98,8 +97,7 @@ namespace aelzns {
 
       /**
       *
-      * @return The error code associated with the exception, 0 means no error code
-      *			is available
+      * @return The error code associated with the exception
       */
 		  int getErrorCode() const {
          return errorCode_;

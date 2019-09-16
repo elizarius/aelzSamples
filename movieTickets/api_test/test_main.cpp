@@ -30,14 +30,12 @@ using namespace aelzns;
           _user.create("aela", "huy");
         }
         catch (Exception& e) {
-          
           std::cout << "Exception caught USER CREATION test " << std::endl;
-          std::cout << e.what() << std::endl;
-          std::cout << e.getFunctionName() << std::endl;
-          std::cout << e.getFileName() << std::endl;
-          std::cout << e.getLineNo() << std::endl;
-          std::cout << e.getErrorCode() << std::endl;
-
+          std::cout <<"Message: "<<e.what() << std::endl;
+          std::cout <<"Function: "<<e.getFunctionName() << std::endl;
+          std::cout <<"File: "<<e.getFileName() << std::endl;
+          std::cout <<"Line no: "<<e.getLineNo() << std::endl;
+          std::cout <<"Error code: "<<e.getErrorCode() << std::endl;
           return;
         }
       }

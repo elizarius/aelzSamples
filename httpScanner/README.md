@@ -31,7 +31,6 @@ Security considerations?
      
  - Extra option could be use IPSec (Ikev2 / Strongswan ) as secure transmission (actually heavy solution)
 
-
 TBD
 ---
 1. Implement config file class: list of urls 
@@ -41,6 +40,8 @@ TBD
 5. Exception handling instead of traditional status codes  OK
 6. All functions with  RC_NOT_IMPLEMENTED
 7. api_test runner 
-8. CLI in main (geT_longopt)
+8. CLI in main (get_longopt)
 
-
+ Third party SW (BSD license)
+ ----------------------------
+ https://github.com/elnormous/HTTPRequest.git

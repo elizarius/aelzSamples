@@ -12,7 +12,7 @@ using namespace hs;
 int main(int argc, char* argv[])
 {
   Scanner scanner;
-  scanner.init(5,LOG_STD); 
+  scanner.init(LOG_STD); 
   scanner.run();
 
   return 0;

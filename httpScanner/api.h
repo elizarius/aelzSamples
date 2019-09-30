@@ -8,12 +8,9 @@
 #include <string>
 #include <vector>
 
-
-
 namespace hs {
 
   class Logger;
-
   enum RetCode
   {
       RC_SUCCESS = 0,
@@ -34,7 +31,7 @@ namespace hs {
   class ConfigReader {
     public:
       ConfigReader ();
-      ConfigReader (std::string filename): _fileName(filename) {}
+      ConfigReader (std::string filename);
       virtual ~ConfigReader () {}
 
       /**
@@ -63,9 +60,14 @@ namespace hs {
        * @param   none
        * @return  content 
        */
-      std::string readContent() {
+      std::string getContent() {
         return _content; 
       }
+
+      const int  getTimeout() {
+        return _timeout; 
+      }
+
 
       /**
        * clean resources on shutdown to prevent info leaks
@@ -82,6 +84,7 @@ namespace hs {
       std::vector<std::string>  _urls;
       std::vector<std::string>  _wrongUrls;
       std::string _content;
+      int _timeout;
 
        /**
        * validate string received
@@ -92,7 +95,6 @@ namespace hs {
       RetCode validate(std::string) {
         return RC_NOT_IMPLEMENTED; 
       }
-
   };
 
   /**
@@ -106,10 +108,10 @@ namespace hs {
       /**
        * init http scanner 
        *
-       * @param perodical timeout to make requests  
+       * @param  log type 
        * @return unique session id on SUCCESS, 0 on FAILURE
        */
-      RetCode init (int timeout, LogType logType);
+      RetCode init (LogType logType);
 
       /**
        * clean resources on shutdown to prevent info leaks
@@ -136,7 +138,6 @@ namespace hs {
       std::string _content;
       
       bool validateContent(std::string);
-
 
       std::string timeToString();
       /**

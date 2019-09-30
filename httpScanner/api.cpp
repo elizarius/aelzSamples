@@ -1,6 +1,7 @@
 #include "api.h"
 #include "Logger.h"
 
+#include <fstream>
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -15,20 +16,42 @@ using namespace std;
 using namespace hs;
 
 /* Now just hardcode list of urls, later read from file*/
-ConfigReader::ConfigReader () {
+ConfigReader::ConfigReader () {}
+
+ConfigReader::ConfigReader (std::string filename): _fileName(filename)
+{
+  std::ifstream file_(_fileName);
+  std::string line_;
+
+  if (file_.is_open()) {
+    while (std::getline(file_, line_)) {
+
+      size_t found = line_.find("Content:"); 
+      if (found != string::npos) {
+        _content = line_.substr(found+sizeof("Content:"), string::npos);
+      } else { 
+        size_t found = line_.find("Timeout:"); 
+        if (found != string::npos) {
+          _timeout = std::stoi(line_.substr(found+sizeof("Timeout:"), string::npos));
+        } else {
+          _urls.push_back(line_);
+        }
+      }
+    }
+    file_.close();
+  }
 }
 
 
-Scanner::Scanner (): _content("Please login") {
-  /* TBD later in config reader */
-  _urls.push_back ("http://www.foobar.com/login");
-  _urls.push_back ("http://test.com/test");
-  _urls.push_back ("http://speetest.net");
+Scanner::Scanner (): _content("") {
  }
 
-RetCode Scanner::init(int timeout, LogType logType) {
-//   ConfigReader cr;
-//   _urls = cr.readConfig();
+RetCode Scanner::init(LogType logType) {
+   ConfigReader cr("config.txt");
+  _urls = cr.readConfig();
+  _content = cr.getContent();
+  _timeout = cr.getTimeout();
+
   if (logType == LOG_STD ) {
     _logger = new  ConsoleLogger();
   }
@@ -36,7 +59,6 @@ RetCode Scanner::init(int timeout, LogType logType) {
     _logger = new  SyslogLogger();
   }
 
-  _timeout = timeout;
   return RC_SUCCESS;
 }
 

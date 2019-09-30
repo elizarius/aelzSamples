@@ -31,11 +31,12 @@ Security considerations?
      
  - Extra option could be use IPSec (Ikev2 / Strongswan ) as secure transmission (actually heavy solution)
 
+
 TBD
 ---
-1. Implement config file class: list of urls 
-2. Read timeout value from config file 
-3. Read content string from config file 
+1. Implement config file class: list of urls  OK 
+2. Read timeout value from config file        OK 
+3. Read content string from config file       OK 
 4. Move implementation from headers to cpp files
 5. Exception handling instead of traditional status codes  OK
 6. All functions with  RC_NOT_IMPLEMENTED

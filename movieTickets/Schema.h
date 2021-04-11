@@ -10,7 +10,7 @@ namespace movie {
 
   /*
   * Movie DBs storage.
-  * Like postgre, schema contains list of DBs (tables in terms of postgresql) 
+  * Like postgre, schema contains list of DBs (tables in terms of postgresql)
   * Signleton pattern used to reach from several classes.
   */
   class Schema {
@@ -19,7 +19,7 @@ namespace movie {
         static Schema ch;
         return ch;
       }
-      
+
       virtual  ~Schema();
       void init();
 

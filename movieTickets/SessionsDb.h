@@ -13,12 +13,12 @@
 namespace movie {
 
   class SessionData {
-    public: 
+    public:
       SessionData(int id):_sessionId(id) {}
       SessionData() {}
       virtual ~SessionData(){}
 
-    private: 
+    private:
      int  _sessionId;
 
   };

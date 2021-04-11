@@ -42,7 +42,7 @@ Cli * Loader::getHandler(const char * arg) {
 }
 
 void Loader::runAll(int argc, char* argv[]) {
-  
+
   argHandlersType::iterator theIt;
   for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
     cout<<"***\t"<<theIt->first<<" started\t***"<<endl;

@@ -11,13 +11,13 @@
 namespace movie {
 
   class Theater {
-    public: 
+    public:
       Theater(std::string name, int seats);
       Theater() {}
       virtual ~Theater(){}
       TimeMovieSeatsType & getBookings(){return _bookings;}
 
-    private: 
+    private:
       std::string _name;
       int _totalSeats;
       TimeMovieSeatsType _bookings;

@@ -1,2 +1,0 @@
-# cppSamples
-cppSamples on github

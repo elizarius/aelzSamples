@@ -68,6 +68,3 @@ int main(void)
    delete fi[i];
 }
 
-
-
-

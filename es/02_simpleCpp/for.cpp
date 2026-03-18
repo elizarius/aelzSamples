@@ -23,9 +23,7 @@ using namespace std ;
      }
    }
 
-    int main ()
-    {
-
-    printBuf( ) ;
-    return 0 ;
+    int main () {
+        printBuf( );
+        return 0;
     }

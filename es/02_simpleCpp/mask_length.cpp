@@ -28,6 +28,7 @@ int main ()
             count++;
         }
         c1=c1+count;
+        std::cout << "count in bin : " << std::bitset<16>(c1) << std::endl;
     }
 
     cout<<"Counter "<< c1<<endl;

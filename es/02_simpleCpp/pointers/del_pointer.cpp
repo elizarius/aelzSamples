@@ -40,6 +40,6 @@ int main(void)
   if ( MyInstance)
    MyInstance->printInstance () ;
 
- return 1;
+ return 0;
 }
 

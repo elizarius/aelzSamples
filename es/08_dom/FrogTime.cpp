@@ -45,7 +45,6 @@
 
 
 int solution(int X, vector<int> &A) {
-    
     if ((A.size() <1) || (A.size()>100000))
         return -1;
     if (( X <1)  || (X>100000))
@@ -53,12 +52,12 @@ int solution(int X, vector<int> &A) {
 
     std::set<int> B;
     for (auto it = A.begin(); it != A.end(); ++it) {
-            if ((*it <1) || 
-                (*it >100000) || 
+            if ((*it <1) ||
+                (*it >100000) ||
                 (*it >(X+1)))
-                    return -1;            
+                    return -1;
 
-        // Set members added only one  
+        // Set members added only one
         B.insert(*it);
 
         if ( B.size() == static_cast<unsigned int>(X)) {

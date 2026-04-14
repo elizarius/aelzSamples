@@ -90,7 +90,7 @@ int Session::create(std::string userid, std::string password) {
     }
   }
 
-  /* generate session id   */
+  /* generate random session id   */
   std::srand(std::time(nullptr)); // use current time as seed for random generator
   int session_id  = std::rand();
 

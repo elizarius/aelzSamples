@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 // OR a simpler (and probably faster) version (by dave):
 struct ci_less
 {
@@ -17,11 +16,6 @@ struct ci_less
 	return strcasecmp(s1.c_str(), s2.c_str()) < 0;
   }
 };
-
-
-
-
-
 
 typedef set<std::string, ci_less> age_set;
 
@@ -46,6 +40,6 @@ int main()
 		cout << "Found NAME : " << (*i) << endl;
 
 	return 0;
-} // end of main
+}
 
 

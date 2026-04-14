@@ -3,7 +3,7 @@
 
 namespace aelzns {
 	/**
-	 * a class that is to be inherited with disabled copy constructor and assignement 
+	 * a class that is to be inherited with disabled copy constructor and assignment
 	 * operators
 	 */
   class NonCopyable {

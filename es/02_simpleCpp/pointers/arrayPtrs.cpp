@@ -107,10 +107,6 @@ int main(){
             std::cout << ", huum, I don't see anything" << std::endl;
         }
         */
-
-
-
-
         std::cout << "Do you want me to try again ? (Y | N) : ";
 
         char go_on;

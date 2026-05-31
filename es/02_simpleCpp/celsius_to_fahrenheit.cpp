@@ -10,5 +10,10 @@ int main() {
 
     std::cout << celsius << "°C = " << fahrenheit << "°F" << std::endl;
 
+    if (( 6%2) == 0)
+     std::cout<<" ODD"<<std::endl;
+    else
+     std::cout<<" Even"<<std::endl;
+
     return 0;
 }

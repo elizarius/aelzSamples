@@ -24,7 +24,7 @@ int FwdList::processCli(int c, char * argv[]) {
     for ( it = mylist.begin(); it != mylist.end(); ++it )
         std::cout << ' ' << *it;
     std::cout <<std::endl;
-    
+
     // Replace first node
     mylist.front() =11;
 
@@ -45,12 +45,10 @@ int FwdList::processCli(int c, char * argv[]) {
     // Insert at end could not be done easily, below is not working
     //mylist.insert_after ( mylist.end(), 1111 );
 
-
     std::cout << "mylist updated:";
     for (it = mylist.begin(); it != mylist.end(); ++it )
         std::cout << ' ' << *it;
     std::cout <<std::endl;
-
 
     std::cout <<"Now in sorted order: \t ";
     mylist.sort();

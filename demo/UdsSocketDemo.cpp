@@ -10,19 +10,19 @@
 
 void udsS(){
     UdsServer us;
-    
-    /* 
-    * Historical function name, actually nothing to cli but socket listener 
+
+    /*
+    * Historical function name, actually nothing to cli but socket listener
     */
-    char* argus[] = {"exit_after_one" };
-    us.processCli(1, argus);
+    const char* argus[] = {"exit_after_one" };
+    us.processCli(1, const_cast<char**>(argus));
     return;
 }
 
 void udsCl(){
     InterfaceHandler ih;
-    char* argus[] = {"aelz","--if-name", "zzz" };
-    ih.processCli(3, argus);
+    const char* argus[] = {"aelz","--if-name", "zzz" };
+    ih.processCli(3, const_cast<char**>(argus));
     return;
 }
 
@@ -31,7 +31,7 @@ using namespace aelzns;
 
 UdsSocketDemo::UdsSocketDemo(){}
 
-/* Activate 2 server / client threads and send control to them */  
+/* Activate 2 server / client threads and send control to them */
 int UdsSocketDemo::processCli(int c, char * argv[]) {
     thread first(udsS);
     std::this_thread::sleep_for(std::chrono::milliseconds(100));

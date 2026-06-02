@@ -2,7 +2,7 @@
 #define _FWD_LIST_
 
 /**
- *  Forwarding list demo example 
+ *  Forwarding list demo example
  */
 #include "cli.h"
 

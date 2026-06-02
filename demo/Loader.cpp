@@ -1,7 +1,6 @@
 #include "Loader.h"
 #include "UdsSocketDemo.h"
 #include "FwdList.h"
-#include "DomWorker.h"
 #include <thread>
 #include <chrono>
 #include <iostream>
@@ -14,15 +13,13 @@ void Loader::init() {
 
   mHandlers.insert(argHandlersType::value_type ("udsSocket", new UdsSocketDemo));
   mHandlers.insert(argHandlersType::value_type ("fwdList", new FwdList));
-  mHandlers.insert(argHandlersType::value_type ("simpleSamples", new DomWorker));
 }
 
 void Loader::usage() {
   cout<<"Usage ./demo <no_args|handlers>"<<endl;
   cout<<"Handlers:"<<endl;
-  argHandlersType::iterator theIt;
 
-  for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
+  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
     cout<<"    "<<theIt->first<<endl;
   }
 }
@@ -43,8 +40,7 @@ Cli * Loader::getHandler(const char * arg) {
 
 void Loader::runAll(int argc, char* argv[]) {
 
-  argHandlersType::iterator theIt;
-  for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
+  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
     cout<<"***\t"<<theIt->first<<" started\t***"<<endl;
     theIt->second->processCli(argc, argv);
     cout<<"***\t"<<theIt->first<<" finished\t***"<<endl<<endl<<endl;
@@ -53,8 +49,7 @@ void Loader::runAll(int argc, char* argv[]) {
 }
 
 Loader::~Loader() {
-  argHandlersType::iterator theIt;
-  for (theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
+  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
     delete theIt->second ;
     theIt->second = 0 ;
   }

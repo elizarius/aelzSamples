@@ -7,24 +7,24 @@
 
 namespace aelzns {
   /**
-  *     
-  * This class represents the Exception exception
-  *                     
+  *
+  * This class encapsulated exception C++ processing
+  *
   */
   class Exception : public std::exception {
     public:
 
       /**
-       *  
+       *
        * Exception constructor
-       * 
+       *
        * @param the error message associated with this exception
        * @param the name of file in source code where the exception was thrown
        * @param the number of the line where the exception was thrown
        * @param functionName the name of the function in which the exception was thrown
        * @param errorCode the error code associated with this exception
        *
-       */        
+       */
       Exception(const char* errorMsg,
                 const char* fileName ,
                 unsigned short lineNo ,
@@ -42,16 +42,16 @@ namespace aelzns {
       }
 
       /**
-       *  
+       *
        * Exception virtual destructor
        *
-       */        
+       */
       virtual ~Exception() throw(){}
 
 
       /**
       * @return the error message
-      */        
+      */
       const char* getErrorMsg() const {
         return errorMsg_.c_str();
       }

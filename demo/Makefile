@@ -6,12 +6,10 @@
 
 export BASE_DIR=/home/aelz/repa/aelzSamples
 CXX      = g++
-CXXFLAGS = -g -std=c++11
+CXXFLAGS = -g -std=c++20
 INCLUDES =	-I. \
 			-I${BASE_DIR}/include \
 			-I${BASE_DIR}/udsServer \
-			-I${BASE_DIR}/es/08_dom
-
 
 LIBS =	-lpthread
 
@@ -23,10 +21,8 @@ OBJECTS =	main.o \
 			Loader.o \
 			UdsSocketDemo.o \
 			FwdList.o \
-			DomWorker.o \
 			${BASE_DIR}/udsServer/UdsServer.o \
 			${BASE_DIR}/udsServer/InterfaceHandler.o \
-			${BASE_DIR}/es/08_dom/BinarySearchTree.o
 
 
 #OBJECTS := $(wildcard *.o)

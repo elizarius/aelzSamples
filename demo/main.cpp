@@ -22,13 +22,12 @@ int main(int argc, char* argv[])
         loader.usage();
         return 0;
       } else {
-          Cli * cliHandler = loader.getHandler(argv[1]);
-          if (cliHandler) {
-            cliHandler->processCli(argc, argv );
-          }
-          else  {
-            cout<<"****** Error: wrong  handler: "<<argv[1]<<endl;
-          }
+        Cli* cliHandler = loader.getHandler(arg);
+        if (cliHandler) {
+          cliHandler->processCli(argc, argv);
+        } else {
+          cout << "****** Error: wrong handler: " << argv[1] << endl;
+        }
       }
     }
 

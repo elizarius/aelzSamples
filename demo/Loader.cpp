@@ -5,53 +5,41 @@
 #include <chrono>
 #include <iostream>
 
+// Note: Using endl for flushing output. For performance-critical code, '\n' can be used instead
+// since it avoids the overhead of flushing the output buffer.
+
 using namespace std;
 using namespace aelzns;
 
 void Loader::init() {
-  cout<<endl<<"**  Application demonstrates basic C++ samples and techniques **"<<endl<<endl;
+  cout << endl << "**  Application demonstrates basic C++ samples and techniques **" << endl << endl;
 
-  mHandlers.insert(argHandlersType::value_type ("udsSocket", new UdsSocketDemo));
-  mHandlers.insert(argHandlersType::value_type ("fwdList", new FwdList));
+  mHandlers.emplace("udsSocket", std::make_unique<UdsSocketDemo>());
+  mHandlers.emplace("fwdList", std::make_unique<FwdList>());
 }
 
 void Loader::usage() {
-  cout<<"Usage ./demo <no_args|handlers>"<<endl;
-  cout<<"Handlers:"<<endl;
+  cout << "Usage ./demo <no_args|handlers>" << endl;
+  cout << "Handlers:" << endl;
 
-  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-    cout<<"    "<<theIt->first<<endl;
+  for (const auto& [name, handler] : mHandlers) {
+    cout << "    " << name << endl;
   }
 }
-/*
-*   Get Cli handler instance with argument name as key parameter.
-*/
-Cli * Loader::getHandler(const char * arg) {
-  std::string temp_str(arg);
-  argHandlersType::iterator theIterator;
-
-  theIterator = mHandlers.find(temp_str) ;
-  if (theIterator != mHandlers.end()) {
-    return theIterator->second;
-  }
-  else
-   return 0 ;
+Cli* Loader::getHandler(const std::string& arg) {
+  auto it = mHandlers.find(arg);
+  return (it != mHandlers.end()) ? it->second.get() : nullptr;
 }
 
 void Loader::runAll(int argc, char* argv[]) {
+  constexpr auto delay = std::chrono::milliseconds(1000);
 
-  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-    cout<<"***\t"<<theIt->first<<" started\t***"<<endl;
-    theIt->second->processCli(argc, argv);
-    cout<<"***\t"<<theIt->first<<" finished\t***"<<endl<<endl<<endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  for (const auto& [name, handler] : mHandlers) {
+    cout << "***\t" << name << " started\t***" << endl;
+    handler->processCli(argc, argv);
+    cout << "***\t" << name << " finished\t***" << endl << endl << endl;
+    std::this_thread::sleep_for(delay);
   }
 }
 
-Loader::~Loader() {
-  for (auto theIt = mHandlers.begin(); theIt != mHandlers.end(); ++theIt) {
-    delete theIt->second ;
-    theIt->second = 0 ;
-  }
-  mHandlers.clear();
-}
+Loader::~Loader() = default;

@@ -3,39 +3,33 @@
 
 #include <map>
 #include <string>
+#include <memory>
 #include "cli.h"
 
 namespace aelzns
 {
-  typedef std::map<std::string, Cli *> argHandlersType;
+  using HandlerMap = std::map<std::string, std::unique_ptr<Cli>>;
 
-  /*
-  *   Cli handlers storage.
-  *   Signleton pattern used because handlers could be reachable
-  *   from several classes.
-  */
   class Loader
   {
     public:
       static Loader& Instance() {
-        static Loader ch;
-        return ch;
+        static Loader instance;
+        return instance;
       }
 
-      virtual  ~Loader();
+      ~Loader();
       void init();
       void usage();
-
-      /* run all handlers in loop */
       void runAll(int argc, char* argv[]);
-      Cli * getHandler(const char * arg);
+      Cli* getHandler(const std::string& arg);
+
+      Loader(const Loader&) = delete;
+      Loader& operator=(const Loader&) = delete;
 
     private:
-      Loader (){}                             // default ctor is hidden
-      Loader(Loader const&);                // copy ctor is hidden
-      Loader& operator=(Loader const&);     // assignment op is hidden
-
-    argHandlersType mHandlers;
+      Loader() = default;
+      HandlerMap mHandlers;
   };
 }
 #endif

@@ -20,7 +20,7 @@ class BinaryGap : public Task {
     virtual bool execute() {
       int target = 9;
       int maxlen = solution(target);
-      std::cout<<"\t"<<__PRETTY_FUNCTION__<<" binary gap for : "<<\
+      std::cout<<"\t"<<__func__<<" binary gap for : "<<\
       target<<" = "<<maxlen<<std::endl<<std::endl;
       return 0;    
     }

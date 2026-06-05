@@ -1,5 +1,6 @@
 #include "BinarySearchTree.h"
 #include <iostream>
+#include <source_location>
 
 // https://en.wikipedia.org/wiki/Binary_tree
 // https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html
@@ -9,11 +10,11 @@ using namespace aelzns;
 
 bool BinarySearchTree::contains(const Node& root, int value) {
 
-  std::cout<<"\t"<<__PRETTY_FUNCTION__<<" checking for value:  "<<value<<endl;
+  std::cout<<"\t"<<std::source_location::current().function_name()<<"() **** checking for value:  "<<value<<endl;
 
   int rootValue = root.getValue();
   if (rootValue == value) {
-    //std::cout<<"\t"<<__PRETTY_FUNCTION__<<" contains value:  ";
+    //std::cout<<"\t"<<std::source_location::current().function_name()<<" contains value:  ";
     return true;
   }
 
@@ -21,7 +22,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
   if (value < rootValue) {
     // go to left node
     if (root.getLeft() !=0) {
-      //std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check left node:  "<<endl;
+      //std::cout<<"\t"<<std::source_location::current().function_name()<<" check left node:  "<<endl;
       return BinarySearchTree::contains(*(root.getLeft()), value);
     }  else
         return false;
@@ -30,7 +31,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
     /* check right branch */
     int rightValue;
     if (root.getRight() !=0) {
-      //std::cout<<"\t"<<__PRETTY_FUNCTION__<<" check right node:  "<<endl;
+      //std::cout<<"\t"<<std::source_location::current().function_name()<<" check right node:  "<<endl;
       return BinarySearchTree::contains(*(root.getRight()), value);
     } 
 

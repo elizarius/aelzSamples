@@ -13,11 +13,11 @@ using namespace aelzns;
 
 DomWorker::DomWorker() {
   _tasks.push_front(new BinarySearchTree);
-  _tasks.push_front(new BinaryGap);
-  _tasks.push_front(new CommonNames);
-  _tasks.push_front(new CyclicRotation);
-  _tasks.push_front(new FrogJump);
-  _tasks.push_front(new Permutation);
+  // _tasks.push_front(new BinaryGap);
+  // _tasks.push_front(new CommonNames);
+  // _tasks.push_front(new CyclicRotation);
+  // _tasks.push_front(new FrogJump);
+  // _tasks.push_front(new Permutation);
 
    }
 

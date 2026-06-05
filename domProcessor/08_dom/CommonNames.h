@@ -41,7 +41,7 @@ class CommonNames : public Task {
   }
 
   virtual bool execute() {
-    std::cout<<"\t"<<__PRETTY_FUNCTION__<<"  COMPLEMENT algorithm started"<<std::endl;
+    std::cout<<"\t"<<__func__<<"  COMPLEMENT algorithm started"<<std::endl;
 
     std::vector<std::string> names1 = {"Ava", "Emma", "Olivia"};
     std::vector<std::string> names2 = {"Olivia", "Sophia", "Emma"};

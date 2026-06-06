@@ -1,15 +1,16 @@
 #ifndef _TASK_H_
 #define _TASK_H_
 
-#include "NonCopyable.h"
-
 namespace aelzns {
 
-// Abstract task to be inherited by task executors
-class Task : public NonCopyable {
+class Task {
     public:
-        Task() {};
-        virtual ~Task(){};
+        Task() = default;
+        virtual ~Task() = default;
+
+        Task(const Task&) = delete;
+        Task& operator=(const Task&) = delete;
+
         virtual bool execute() = 0;
 };
 }

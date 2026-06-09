@@ -15,7 +15,7 @@ class OddOcurance : public Task {
     virtual ~OddOcurance(){}
 
     virtual bool execute() {
-
+      std::cout << "Executing: OddOcurance" << std::endl;
       std::cout<<"\t"<<__PRETTY_FUNCTION__<<" unpaired member in array "<<std::endl;
 
       int odd1 = solution(x, y, d);

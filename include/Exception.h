@@ -58,13 +58,13 @@ namespace aelzns {
 
       /**
       * @return  a pointer to the c-string representing the error message
-      */        
+      */
       virtual const char* what() const throw() {
-        return errorMsg_.c_str(); 
+        return errorMsg_.c_str();
       }
 
       /**
-      * 
+      *
       * @return The line number where the exception occured.
       *
       */
@@ -102,10 +102,10 @@ namespace aelzns {
 		  int getErrorCode() const {
          return errorCode_;
       }
-	    
+
     private:
 
-	    std::string errorMsg_;
+	  std::string errorMsg_;
       std::string fileName_;
       std::string functionName_;
       unsigned short lineNo_;
@@ -115,4 +115,4 @@ namespace aelzns {
 #define AELZ_EXCEPTION(msg,err) Exception(msg, __FILE__, __LINE__, __func__, err)
 }
 
-#endif 
+#endif

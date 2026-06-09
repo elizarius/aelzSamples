@@ -18,11 +18,12 @@ class BinaryGap : public Task {
 
 
     virtual bool execute() {
+      std::cout << "Executing: BinaryGap" << std::endl;
       int target = 9;
       int maxlen = solution(target);
       std::cout<<"\t"<<__func__<<" binary gap for : "<<\
       target<<" = "<<maxlen<<std::endl<<std::endl;
-      return 0;    
+      return 0;
     }
   private:
 

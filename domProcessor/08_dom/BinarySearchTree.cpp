@@ -39,6 +39,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
 
 
 bool BinarySearchTree::execute() {
+    std::cout << "Executing: BinarySearchTree" << std::endl;
     Node n1(1, NULL, NULL);
     Node n3(3, NULL, NULL);
     Node n2(2, &n1, &n3);

@@ -18,7 +18,8 @@ class CyclicRotation : public Task {
     virtual ~CyclicRotation(){}
 
     virtual bool execute() {
-      
+      std::cout << "Executing: CyclicRotation" << std::endl;
+
       std::vector <int> orig{1,2,3,4,5,6,7,8};
       int shifts = 3;
 
@@ -28,6 +29,7 @@ class CyclicRotation : public Task {
         std::cout<<"\t"<<rotated[i];
       }
       std::cout<<std::endl;
+    return 0;
     }
   private:
 

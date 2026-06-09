@@ -22,6 +22,7 @@ class Permutation : public Task {
     virtual ~Permutation(){}
 
     virtual bool execute() {
+      std::cout << "Executing: Permutation" << std::endl;
       std::vector<int> vect1{10, 20, 30};
       std::vector<int> vect2{4, 2, 3, 1};
 

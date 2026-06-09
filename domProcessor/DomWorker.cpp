@@ -13,13 +13,13 @@ using namespace aelzns;
 
 DomWorker::DomWorker() {
   _tasks.push_front(new BinarySearchTree);
-  // _tasks.push_front(new BinaryGap);
-  // _tasks.push_front(new CommonNames);
-  // _tasks.push_front(new CyclicRotation);
-  // _tasks.push_front(new FrogJump);
-  // _tasks.push_front(new Permutation);
+  _tasks.push_front(new BinaryGap);
+  _tasks.push_front(new CommonNames);
+  _tasks.push_front(new CyclicRotation);
+   _tasks.push_front(new FrogJump);
+   _tasks.push_front(new Permutation);
 
-   }
+}
 
 DomWorker::~DomWorker() {
 
@@ -28,14 +28,14 @@ DomWorker::~DomWorker() {
     delete temp;
     _tasks.pop_front();
   }
-  //std::cout<<__FUNCTION__<<"  task pool size:  "<<_tasks.size()<<std::endl ;
+  //std::cout<<__FUNCTION__<<":  task pool size:  "<<_tasks.size()<<std::endl ;
 }
 
 //  run elementary tasks from queue
 int DomWorker::processCli(int c, char * argv[]) {
   for (auto itr = _tasks.begin(); itr != _tasks.end(); ++itr) {
     reinterpret_cast<Task*>(*itr)->execute();
-    std::cout<<std::endl;
+    std::cout<<"-----------------"<<std::endl;
   }
   return 0;
 }

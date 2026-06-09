@@ -41,6 +41,7 @@ class CommonNames : public Task {
   }
 
   virtual bool execute() {
+    std::cout << "Executing: CommonNames" << std::endl;
     std::cout<<"\t"<<__func__<<"  COMPLEMENT algorithm started"<<std::endl;
 
     std::vector<std::string> names1 = {"Ava", "Emma", "Olivia"};

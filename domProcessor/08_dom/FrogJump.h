@@ -22,6 +22,7 @@ class FrogJump : public Task {
     virtual ~FrogJump(){}
 
     virtual bool execute() {
+      std::cout << "Executing: FrogJump" << std::endl;
       int x = 12;
       int y = 99;
       int d = 5;

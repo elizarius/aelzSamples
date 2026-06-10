@@ -35,7 +35,7 @@ class Node {
     Node* right;
 };
 
-    
+
 class BinarySearchTree : public Task {
   public:
     BinarySearchTree() {}

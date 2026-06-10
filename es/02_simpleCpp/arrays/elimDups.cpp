@@ -4,7 +4,7 @@
    The order of the unique numbers should be the same as their first occurrence
    in the input array.
 
-   *** Use own array in exercise. Do not use STL containers!!! ****  
+   *** Use own array in exercise. Do not use STL containers!!! ****
 */
 void unique_numbers( int numbers[], unsigned int collection_size){
   int output[20];
@@ -12,7 +12,7 @@ void unique_numbers( int numbers[], unsigned int collection_size){
 
   for (unsigned int i = 0; i<collection_size; ++i) {
       bool repeat = false;
-      
+
       for (unsigned int j = 0; j<unic_ctr; ++j) {
         if (output[j] == numbers[i]) {
           repeat = true;
@@ -25,7 +25,7 @@ void unique_numbers( int numbers[], unsigned int collection_size){
         output[unic_ctr++] = numbers[i];
       }
   }
-  
+
   std::cout<<" Unique Outputs:  ";
   for (int k= 0; k<unic_ctr;  ++k)
     std::cout<<output[k]<<" ";

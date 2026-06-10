@@ -3,7 +3,7 @@
 #include <map>
 
 using namespace std ;
-     
+
     struct Key
     {
       public:
@@ -53,20 +53,20 @@ bool Key::operator < (const Key &k) const
    Key key_1("FTIPSERule039") ;
    Key key_2("Rule01") ;
    std::cout<<"First key : "<<key_1.name<<std::endl ;
-    
-   KeyStringType Keys ;
-   
-   Keys.insert(std::pair<Key, std::string>(key_1,"My first  string") )  ; 
-   Keys.insert(std::pair<Key, std::string>(key_2,"My second string") )  ; 
-   
-   Keys.erase(key_2 )  ; 
-   Keys.erase(key_1 )  ; 
 
-   Keys.insert(std::pair<Key, std::string>(key_1,"My first  string") )  ; 
-//   Keys.insert(std::pair<Key, std::string>(key_2,"My second string") )  ; 
+   KeyStringType Keys ;
+
+   Keys.insert(std::pair<Key, std::string>(key_1,"My first  string") )  ;
+   Keys.insert(std::pair<Key, std::string>(key_2,"My second string") )  ;
+
+   Keys.erase(key_2 )  ;
+   Keys.erase(key_1 )  ;
+
+   Keys.insert(std::pair<Key, std::string>(key_1,"My first  string") )  ;
+//   Keys.insert(std::pair<Key, std::string>(key_2,"My second string") )  ;
 
    /*
-      
+
     KeyStringType::iterator it = Keys.find(key_1);
     if (it != Keys.end())
     {
@@ -76,10 +76,10 @@ bool Key::operator < (const Key &k) const
     {
      std::cout<< "Required key not found "<<std::endl;
     }
-    
+
     */
-    
-    
+
+
     KeyStringType::iterator it1 = Keys.find(key_2);
     if (it1 != Keys.end())
     {
@@ -90,8 +90,8 @@ bool Key::operator < (const Key &k) const
      std::cout<< "Required key not found "<<std::endl;
     }
 
-    
-    return 0 ; 
+
+    return 0 ;
    }
 
 

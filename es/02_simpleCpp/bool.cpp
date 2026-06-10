@@ -16,7 +16,7 @@ int main()
 
     success = !IPSEC_CONF_ERROR;
     std::cout<< "!IPSEC_CONF_ERROR: "<<!IPSEC_CONF_ERROR<<" casted to success: " <<success<<std::endl;
- 
+
     success = IPSEC_CONF_OK;
     std::cout<< "IPSEC_CONF_OK: "<<IPSEC_CONF_OK<<" casted to success: " <<success<<std::endl;
 

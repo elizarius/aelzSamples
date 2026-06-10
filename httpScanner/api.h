@@ -38,34 +38,34 @@ namespace hs {
        * read configuration file
        *
        * @param   none
-       * @return  http urls to be scanned 
+       * @return  http urls to be scanned
        */
       std::vector<std::string> readConfig() {
-        return _urls; 
+        return _urls;
       }
 
       /**
        * read list of wrong urls, detected in config file
        *
        * @param   none
-       * @return  http urls with wrong format, detected in file 
+       * @return  http urls with wrong format, detected in file
        */
       std::vector<std::string> readWrongUrls() {
-        return _wrongUrls; 
+        return _wrongUrls;
       }
 
       /**
-       * read content string, found in file 
+       * read content string, found in file
        *
        * @param   none
-       * @return  content 
+       * @return  content
        */
       std::string getContent() {
-        return _content; 
+        return _content;
       }
 
       const int  getTimeout() {
-        return _timeout; 
+        return _timeout;
       }
 
 
@@ -76,7 +76,7 @@ namespace hs {
        * @return enum return code
        */
       RetCode finalize() {
-        return RC_NOT_IMPLEMENTED; 
+        return RC_NOT_IMPLEMENTED;
       }
 
     private:
@@ -93,12 +93,12 @@ namespace hs {
        * @return enum return code
        */
       RetCode validate(std::string) {
-        return RC_NOT_IMPLEMENTED; 
+        return RC_NOT_IMPLEMENTED;
       }
   };
 
   /**
-   * The class to scan web links 
+   * The class to scan web links
    */
   class Scanner  {
     public:
@@ -106,9 +106,9 @@ namespace hs {
       virtual ~Scanner () {}
 
       /**
-       * init http scanner 
+       * init http scanner
        *
-       * @param  log type 
+       * @param  log type
        * @return unique session id on SUCCESS, 0 on FAILURE
        */
       RetCode init (LogType logType);
@@ -122,32 +122,32 @@ namespace hs {
       RetCode finalize();
 
       /**
-       * start http scanner 
+       * start http scanner
        *
-       * @param none 
+       * @param none
        * @return enum return code
 
        * @return unique session id on SUCCESS, 0 on FAILURE
        */
       RetCode run ();
-      
+
     private:
       Logger * _logger;
       std::vector<std::string>  _urls;
       int _timeout;
       std::string _content;
-      
+
       bool validateContent(std::string);
 
       std::string timeToString();
       /**
-       * send http GET request  
+       * send http GET request
        *
-       * @param none 
+       * @param none
        * @return enum return code
        */
       RetCode getRequest (std::string url) {
-        return RC_NOT_IMPLEMENTED; 
+        return RC_NOT_IMPLEMENTED;
       }
 
    };

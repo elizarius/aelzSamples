@@ -163,7 +163,7 @@ std::vector<int>  Session::bookTickets(int session_id,
                                       std::string movie_name,
                                       std::string movie_time,
                                       int  number_seats) {
-          
+
   Schema & schema = Schema::Instance();
   Db* sessionsDb = schema.getHandler("sessions");
   std::vector<int> reserved_tickets;
@@ -177,8 +177,8 @@ std::vector<int>  Session::bookTickets(int session_id,
       return reserved_tickets;
     }
   }
-  
-  // 2. find get bookings per theater 
+
+  // 2. find get bookings per theater
   Db* theaDb = schema.getHandler("theaters");
 
   if (!theaDb) {
@@ -195,7 +195,7 @@ std::vector<int>  Session::bookTickets(int session_id,
 
   TimeMovieSeatsType & tms = it->second->getBookings();
 
-  // 3. Find required time slot 
+  // 3. Find required time slot
   auto it1 = tms.find(movie_time);
   if (it1 == tms.end()) {
     cout <<"Error: requested movie time does not exist: "<<movie_time<<endl;
@@ -214,8 +214,8 @@ std::vector<int>  Session::bookTickets(int session_id,
     return reserved_tickets;
   }
 
-  // 6. Move places from available to out vector 
-  for (int i = 1; i <= number_seats; i++) {                                                                           
+  // 6. Move places from available to out vector
+  for (int i = 1; i <= number_seats; i++) {
     reserved_tickets.push_back(it1->second.second.front());
     it1->second.second.pop_front();
   }
@@ -234,7 +234,7 @@ RetCode Admin::create(std::string userid, std::string password) {
   mtx_admcr.lock();
   it->second->_isAdmin = true;
   mtx_admcr.unlock();
-  
+
   return RC_SUCCESS;
 }
 

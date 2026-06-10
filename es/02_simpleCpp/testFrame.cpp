@@ -28,12 +28,12 @@ private :
 
 
 int main ()
-{ 
+{
    TestClass tt ;
-   tt.F1() ;	
+   tt.F1() ;
    tt.F2() ;
    tt.F3() ;
- 
+
   return  0 ;
 }
 

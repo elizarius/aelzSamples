@@ -32,7 +32,7 @@ bool BinarySearchTree::contains(const Node& root, int value) {
     if (root.getRight() !=0) {
       //std::cout<<"\t"<<__func__<<" check right node:  "<<endl;
       return BinarySearchTree::contains(*(root.getRight()), value);
-    } 
+    }
 
   return false;
 }

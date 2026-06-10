@@ -9,7 +9,7 @@ using namespace std ;
 class RsBase ;
 
 // require improvements, logic to switch one state to another should be there
-// but not in state instances, that  perhaps should  execute specific for each 
+// but not in state instances, that  perhaps should  execute specific for each
 // state actions
 class IPSecProcessHandler
 {

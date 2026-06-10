@@ -39,7 +39,7 @@ int main()
     TrainComposition tree;
     tree.attachWagonFromLeft(7);
     tree.attachWagonFromLeft(13);
-    std::cout << tree.detachWagonFromRight() << "\n"; // 7 
+    std::cout << tree.detachWagonFromRight() << "\n"; // 7
     std::cout << tree.detachWagonFromLeft(); // 13
     std::cout <<std::endl;
 }

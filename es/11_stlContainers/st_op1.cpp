@@ -7,7 +7,7 @@ int main ( )
 {
 string catalog = "dba" ;
 char * uid_ 	= const_cast<char *>("dba") ;
-char * pwd_ 	= const_cast<char *>("dba") ;  
+char * pwd_ 	= const_cast<char *>("dba") ;
 
 //************************************************
 //

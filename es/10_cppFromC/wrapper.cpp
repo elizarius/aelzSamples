@@ -1,7 +1,7 @@
 #include "Simple.h"
 #include "wrapper.h"
 
-void wrapper() 
+void wrapper()
 {
  Simple::printInstance() ;
 }

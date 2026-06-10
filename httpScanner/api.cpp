@@ -26,11 +26,11 @@ ConfigReader::ConfigReader (std::string filename): _fileName(filename)
   if (file_.is_open()) {
     while (std::getline(file_, line_)) {
 
-      size_t found = line_.find("Content:"); 
+      size_t found = line_.find("Content:");
       if (found != string::npos) {
         _content = line_.substr(found+sizeof("Content:"), string::npos);
-      } else { 
-        size_t found = line_.find("Timeout:"); 
+      } else {
+        size_t found = line_.find("Timeout:");
         if (found != string::npos) {
           _timeout = std::stoi(line_.substr(found+sizeof("Timeout:"), string::npos));
         } else {
@@ -62,14 +62,14 @@ RetCode Scanner::init(LogType logType) {
   return RC_SUCCESS;
 }
 
-RetCode Scanner::finalize() { 
+RetCode Scanner::finalize() {
   _timeout = 0;
   _logger = 0;
    _urls.clear();
   return RC_SUCCESS;
 }
 
-RetCode Scanner::run() { 
+RetCode Scanner::run() {
 
   bool a=true;
   while (a) {
@@ -102,7 +102,7 @@ RetCode Scanner::run() {
         continue;
     }
     std::this_thread::sleep_for (std::chrono::seconds(_timeout));
-  } // end while 
+  } // end while
 
   return RC_SUCCESS;
 }
@@ -117,8 +117,8 @@ std::string Scanner::timeToString() {
 
 bool Scanner::validateContent(std::string resp) {
   std::size_t found = resp.find(_content);
-  if (found!=std::string::npos) 
+  if (found!=std::string::npos)
     return true;
-  else 
+  else
     return false;
 }

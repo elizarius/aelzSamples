@@ -9,18 +9,18 @@ using namespace std;
 
 Simple::Simple()
 {
-  cout<<"----- Simple: def CONSTRUCTOR called"<<endl; 
+  cout<<"----- Simple: def CONSTRUCTOR called"<<endl;
 }
 
 Simple::~Simple()
 {
-  cout<<"----- Simple: virtual DESTRUCTOR called"<<endl; 
+  cout<<"----- Simple: virtual DESTRUCTOR called"<<endl;
 }
 
 
 void  Simple::printInstance()
 {
-  cout<<"----- Simple::printInstance() called"<<endl; 
+  cout<<"----- Simple::printInstance() called"<<endl;
 }
 
 

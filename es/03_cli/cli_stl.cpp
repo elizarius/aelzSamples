@@ -1,30 +1,34 @@
 #include <string>
 #include <iostream>
+#include <map>
 
-using namespace std;
 
-void print_message(char sender, string & msg)
+int main(int argc, char* argv[])
 {
-    cout<<"Received message:" <<msg<<" from: "<<sender<<endl;
-}
-
-
-int main(int argc, char * argv[])
-{
-    string print_usage = "Usage:   ./a.out --classX|-X  anyMessage \nExample: ./a.out --classA BLABLABLA";
+    std::string print_usage = "Usage:   ./a.out --classX|-X  anyMessage \nExample: ./a.out --classA BLABLABLA";
     if (argc < 2) {
-    //Tell the user how to run the program
-        std::cerr <<print_usage << std::endl;
+        std::cerr << print_usage << std::endl;
         return 1;
     }
-    /*
-     *  Then create two vectors or map with arg / optarg pair,
-     *  map them to hierarchical handler instance and call instances in cycle
-     *  or  in need basis.
-     *  Like interface handler example or:
-     *  http://www.cplusplus.com/articles/DEN36Up4/
-     *
-     */
-    return 0 ;
+
+    std::map<std::string, std::string> arg_pairs;
+    for (int i = 1; i < argc; ++i) {
+        std::string arg = argv[i];
+        if ((arg.substr(0, 2) == "--" || arg.substr(0, 1) == "-") && i + 1 < argc) {
+            std::string key = arg;
+            std::string value = argv[i + 1];
+            if ((value.substr(0, 1) != "-") || (value.substr(0, 2) != "--")) {
+                arg_pairs[key] = value;
+                ++i;
+            }
+        }
+    }
+
+    std::cout << "Captured " << arg_pairs.size() << " argument pair(s):" << std::endl;
+    for (const auto& pair : arg_pairs) {
+        std::cout << "  " << pair.first << " => " << pair.second << std::endl;
+    }
+
+    return 0;
 }
 

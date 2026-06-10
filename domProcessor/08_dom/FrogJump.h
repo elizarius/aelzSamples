@@ -5,7 +5,7 @@
 #include <iostream>
 
 // A small frog wants to get to the other side of the road. The frog is currently located
-// at position X  and wants to get to a position greater than or equal to Y. 
+// at position X  and wants to get to a position greater than or equal to Y.
 // The small frog always jumps a fixed distance, D.
 // Count the minimal number of jumps that the small frog must perform to reach its target.
 
@@ -15,7 +15,7 @@
 
 
 namespace aelzns {
-    
+
 class FrogJump : public Task {
   public:
     FrogJump() { }
@@ -31,7 +31,7 @@ class FrogJump : public Task {
 
       int n_jumps = solution(x, y, d);
       std::cout<<"\t"<<__PRETTY_FUNCTION__<<"\t jumps: "<<n_jumps<<std::endl;
-      return true;  
+      return true;
     }
   private:
 
@@ -45,7 +45,7 @@ class FrogJump : public Task {
         std::cout << "ERR: Y out of range"<<std::endl;
         return -1;
       }
-    
+
       if ((D < 1) || (D>1000000000)) {
         std::cout << "ERR: D out of range"<<std::endl;
         return -1;
@@ -58,7 +58,7 @@ class FrogJump : public Task {
 
       int extra = (Y-X)%D;
       int increm = 0;
-      if (extra != 0) 
+      if (extra != 0)
         increm = 1;
 
       // number of jumps rounded to +1 if modulus > 0

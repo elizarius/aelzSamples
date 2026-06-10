@@ -11,7 +11,7 @@
 
 
 namespace aelzns {
-    
+
 class CyclicRotation : public Task {
   public:
     CyclicRotation() { }
@@ -34,7 +34,7 @@ class CyclicRotation : public Task {
   private:
 
     std::vector<int> solution(std::vector<int> &A, int K) {
-      if ((K < 0) || 
+      if ((K < 0) ||
           (A.size()==1) ||
           (A.size()== static_cast<unsigned int>(K)) ||
           (A.empty())) {

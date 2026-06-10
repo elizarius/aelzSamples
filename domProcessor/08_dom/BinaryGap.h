@@ -7,10 +7,10 @@
 
 //  calculate binary gap: number of 0s between 1s in binary format representation
 //  used algo -> bitsets as hex string representation
-//  more effective approach is to use XOR ? 
+//  more effective approach is to use XOR ?
 
 namespace aelzns {
-    
+
 class BinaryGap : public Task {
   public:
     BinaryGap() { }

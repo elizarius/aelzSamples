@@ -18,7 +18,7 @@ void unique_numbers(int numbers[], unsigned int collection_size)
 
   // Copy to vector
   std::vector<int> vec(seen.begin(), seen.end());
-    
+
   std::cout << "Seen members (unordered): ";
   for (auto it = vec.rbegin(); it != vec.rend(); ++it) {
     std::cout << *it << " ";

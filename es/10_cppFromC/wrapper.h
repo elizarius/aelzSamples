@@ -3,8 +3,8 @@
 #define __WRAPPER__
 
 #ifdef __cplusplus
-extern "C" 
+extern "C"
 #endif
-void wrapper(); 
+void wrapper();
 
 #endif

@@ -4,8 +4,8 @@
 
 /*
 *	Implement function countNumbers that accepts a sorted vector of unique integers and counts the
-*	number of vector elements that are less than the parameter lessThan.For example, for vector v 
-*	containing { 1, 3, 5, 7 }, SortedSearch::countNumbers(v, 4) should return 2 because there are 
+*	number of vector elements that are less than the parameter lessThan.For example, for vector v
+*	containing { 1, 3, 5, 7 }, SortedSearch::countNumbers(v, 4) should return 2 because there are
 *	two vector elements less than 4.
 */
 

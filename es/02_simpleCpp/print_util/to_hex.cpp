@@ -13,7 +13,7 @@ using namespace std ;
     for(int i=0; i<=1024; i++)
     {
      std::cout<<"I : "<<dec<<i<<"  HEX :  "<<hex<<i<<std::endl ;
-    } 
+    }
 
     return 0 ;
     }

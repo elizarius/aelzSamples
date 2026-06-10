@@ -14,7 +14,7 @@
 namespace movie {
 
     class UserData {
-    public: 
+    public:
       UserData(std::string userid,
                std::string password,
                bool isAdmin): _userid(userid),
@@ -42,7 +42,7 @@ namespace movie {
 
       usersType & getDb() {return _users;}
 
-      bool isValidUser(std::string userid, std::string pwd) {      
+      bool isValidUser(std::string userid, std::string pwd) {
         auto it  = _users.find(userid);
         if (it == _users.end()) {
           return false;
@@ -50,9 +50,9 @@ namespace movie {
         if (it->second->_password != pwd) {
           std::cout <<"Error: wrong password for user: "<<userid<<std::endl;
           return false;
-        } 
+        }
         return true;
-      } 
+      }
     private:
       usersType _users;
   };

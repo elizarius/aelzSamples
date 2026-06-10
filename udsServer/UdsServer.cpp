@@ -70,7 +70,7 @@ int UdsServer::processCli(int c, char * argv[])
         cout <<"Msg from client : "<< msgBuffer<<endl;
         sendResponse(clientSock);
         if (stop_receiving == "exit_after_one") {
-            break;        
+            break;
         }
      } // end for
      close(clientSock);

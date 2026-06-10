@@ -41,12 +41,12 @@ class Base
    {
 
     BaseType::iterator iter = baseMap.begin() ;
-    std::cout<<" "<<iter->first<<std::endl ;  
-    iter->second->printInstance() ;  
-    
+    std::cout<<" "<<iter->first<<std::endl ;
+    iter->second->printInstance() ;
+
    }
-   
-  
+
+
    BaseType baseMap ;
 
 };
@@ -60,17 +60,17 @@ void setMap (Base * base_instance )
  base_instance->baseMap.insert(std::pair<std::string, sec_class *>("First string", temp_b) ) ;
 }
 
-     
-     
+
+
 
 
 using namespace std ;
    int main()
    {
-    
+
    Base testClass ;
    setMap(&testClass) ;
-   testClass.printInstance () ;       
+   testClass.printInstance () ;
    }
 
 

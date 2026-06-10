@@ -34,11 +34,11 @@
 vector<int> solution(int N, vector<int> &A) {
     std::vector<int> zeroes(1, 0);
     std::vector<int> counters(N, 0);
-    
+
     if (A.size() > 100000) return zeroes;
     if ((N > 100000)  || (N<1)) return zeroes;
     int max_c = 0;
-    
+
     for (auto it = A.begin(); it != A.end(); ++it ) {
         if (*it > N+1 ) return zeroes;
 
@@ -49,15 +49,15 @@ vector<int> solution(int N, vector<int> &A) {
             }
         } else {
             counters [*it-1] ++;
-            if  (counters [*it-1] > max_c) 
+            if  (counters [*it-1] > max_c)
                 max_c = counters [*it-1];
         }
-       
+
         //std::cout<<"Counters: [ ";
         //for (auto xx=counters.begin(); xx!=counters.end(); ++xx)
         //    std::cout<<*xx<<" , ";
         //std::cout<<" ] "<<endl;
 
-    } 
-    return counters;    
+    }
+    return counters;
 }

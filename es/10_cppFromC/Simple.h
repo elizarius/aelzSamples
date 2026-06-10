@@ -9,7 +9,7 @@ class Simple
       Simple();
       virtual ~Simple();
       static void printInstance();
-  
+
   private:
 };
 

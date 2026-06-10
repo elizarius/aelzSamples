@@ -6,7 +6,7 @@
 namespace movie {
 
   /**
-   *  Abstract class representing ticketing system DB object 
+   *  Abstract class representing ticketing system DB object
    */
   class Db {
     public:

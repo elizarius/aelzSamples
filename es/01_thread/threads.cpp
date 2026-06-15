@@ -12,7 +12,7 @@
 #include <mutex>
 
 //  g++ threads.cpp  -std=c++11 -lpthread
-// ./float.sh | a.out */
+// ./float.sh | a.out
 
 using namespace std;
 

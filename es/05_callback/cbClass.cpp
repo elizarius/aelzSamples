@@ -1,16 +1,14 @@
 #include <iostream>
 #include <functional>
 
-class CallbackSample
-{
+class CallbackSample {
     public:
         void registerOperation() const {
             std::cout<<"CallbackSample::registerOperation() called"<<std::endl;
         }
 };
 
-class CbCaller
-{
+class CbCaller {
  public:
     void setCB(std::function<void()> callback) {
         cbFunc = callback;

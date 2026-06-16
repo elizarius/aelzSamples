@@ -52,5 +52,3 @@ int main () {
     cout<<buffer<<endl;
     return 0;
 }
-
-

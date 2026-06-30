@@ -5,7 +5,7 @@
 
 int main(){
 
-	const int COLUMN_WIDTH {20};
+	const int COLUMN_WIDTH {16};
 
 	//Highlight position for bit of interest with a 1
 	//Mask other positions with 0
@@ -33,31 +33,31 @@ int main(){
     //Setting : |= with mask of the bit
 
     //Set bit 1
-	std::cout << "Setting bit in position 1" << std::endl;
+	std::cout << "Setting bit in position 1 ";
 	var |= mask_bit_1;
 	std::cout << std::setw(COLUMN_WIDTH) <<  "var : "
 		 << std::setw(COLUMN_WIDTH) << std::bitset<8>(var) << std::endl;
 
 	//Set bit 5
-	std::cout << "Setting bit in position 5" << std::endl;
+	std::cout << "Setting bit in position 5 ";
 	var |= mask_bit_5;
 	std::cout << std::setw(COLUMN_WIDTH) <<  "var : "
-		 << std::setw(COLUMN_WIDTH) << std::bitset<8>(var) << std::endl;
+		 << std::setw(COLUMN_WIDTH) << std::bitset<8>(var)<<std::endl;
 
 
 	//RESETTING BITS : set to 0
     //Resetting : &= (~mask)
 
-	//Reset bit 1
-	std::cout << "Resetting bit in position 1" << std::endl;
+	//Reset bit 1 (set to 0)
+	std::cout << "Resetting bit in position 1";
     var &= (~mask_bit_1);
-	std::cout << std::setw(COLUMN_WIDTH) <<  "var : "
+	std::cout << std::setw(COLUMN_WIDTH) <<  "var :"
 		 << std::setw(COLUMN_WIDTH) << std::bitset<8>(var) << std::endl;
 
 	//Reset bit 5
-	std::cout << "Resetting bit in position 1" << std::endl;
+	std::cout << "Resetting bit in position 5 "; 
     var &= (~mask_bit_5);
-	std::cout << std::setw(COLUMN_WIDTH) <<  "var : "
+	std::cout << std::setw(COLUMN_WIDTH) <<  "var :"
 		 << std::setw(COLUMN_WIDTH) << std::bitset<8>(var) << std::endl;
 
 

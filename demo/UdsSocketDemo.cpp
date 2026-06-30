@@ -1,5 +1,4 @@
 #include "UdsSocketDemo.h"
-
 #include <iostream>
 #include <string>
 #include <thread>

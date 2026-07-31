@@ -15,8 +15,8 @@ typedef enum lm_response_status {
     LM_CAPACITY_RESPONSE = 20,
     LM_FEATURE_NOT_FOUND = 30,
     LM_LICENCE_NOT_FOUND = 40,
-    LM_NULL_RESPONSE = 0 /* A place holder */
+    LM_NULL_RESPONSE = 0 /* placeholder */
 } lm_response_status;
 
 
-#endif /* _LMCOM_H_ */
+#endif /* _ES_H_ */

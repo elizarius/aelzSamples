@@ -1,21 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 
-/* strpbrk example, first occurence of "key"  in str_1  */
+/* strpbrk example, first occurrence of "key" in str_1 */
 
-int main ()
+int main(void)
 {
+    char str_1[] = "%1 Failed to activate.\n Router ID = %2";
+    char key[] = "%";
+    char *pch;
+    int rawlen;
 
- char str_1 [] = "%1 Failed to activate.\n Router ID = %2";
- char  key [] = "%";
+    pch = strpbrk(str_1, key);
+    if (pch == NULL) {
+        printf("Error: key not found in string\n");
+        return 1;
+    }
 
-// printf ("%s \n", str_1 );
- char *pch ;
- pch = strpbrk (str_1, key);
- pch++  ;
- pch++ ;
- int rawlen = strcspn (pch,"%\n");
+    pch += 2;
+    rawlen = strcspn(pch, "%\n");
 
- printf ("%.*s \n",rawlen, pch );
+    printf("%.*s\n", rawlen, pch);
 
+    return 0;
 }

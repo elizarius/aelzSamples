@@ -48,6 +48,7 @@ void print_day(DayOfWeek day) {
 
 int main () {
     print_day(DayOfWeek::Monday);
+    std::cout << std::endl;
+    
     return 0;
 }
-

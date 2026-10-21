@@ -82,8 +82,8 @@ To run the built image in QEMU:
 ```bash
 #runqemu qemux86-64 wic
 runqemu snapshot
-ip addr 
-ssh  @ip_addr 
+ip addr
+ssh  @ip_addr
 ```
 
 Once booted, log in (no password required) and run demo:

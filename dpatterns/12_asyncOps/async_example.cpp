@@ -11,7 +11,7 @@
 
 using namespace std;
 
-// AELZ_01: more info on async methods and ops, see C++ threads session in bucluclu  
+// AELZ_01: more info on async methods and ops, see C++ threads session in bucluclu
 
 // Example 1: Simple async function that returns a value
 int calculateSum(int a, int b) {

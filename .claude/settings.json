@@ -1,0 +1,18 @@
+{
+  "env": {
+    "CPP_REVIEW_MODE": "remind"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/cpp-review.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

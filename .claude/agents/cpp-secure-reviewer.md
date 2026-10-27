@@ -1,7 +1,7 @@
 ---
 name: cpp-secure-reviewer
 description: Reviews C++ files against the project's secure coding rules and fixes violations
-tools: [read, edit, grep, glob, bash]
+tools: Read, Edit, Grep, Glob, Bash
 model: sonnet
 ---
 
